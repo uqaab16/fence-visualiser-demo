@@ -100,10 +100,10 @@ export async function buildQuotePdf(data: QuotePdfData): Promise<jsPDF> {
   const primary = hexToRgb(CLIENT_CONFIG.primaryColor);
   const onPrimary = hexToRgb(getContrastTextColor(CLIENT_CONFIG.primaryColor)); // #000 or #fff
   const infoBg = tint(primary, 0.15); // 15% brand tint on white
-  const pillBg: [number, number, number] = [242, 242, 244];
-  const dark: [number, number, number] = [30, 30, 30];
-  const muted: [number, number, number] = [120, 120, 120];
-  const hairline: [number, number, number] = [228, 228, 232];
+  const pillBg: [number, number, number] = [235, 240, 248];
+  const dark: [number, number, number] = [10, 22, 40];
+  const muted: [number, number, number] = [60, 75, 100];
+  const hairline: [number, number, number] = [180, 195, 215];
 
   const setFill = (c: [number, number, number]) => doc.setFillColor(c[0], c[1], c[2]);
   const setText = (c: [number, number, number]) => doc.setTextColor(c[0], c[1], c[2]);
@@ -129,8 +129,8 @@ export async function buildQuotePdf(data: QuotePdfData): Promise<jsPDF> {
   let leftCursor = padX;
   const logo = await loadLogo(CLIENT_CONFIG.logoFileName);
   if (logo) {
-    const maxH = 40;
-    const maxW = 80;
+    const maxH = 50;
+    const maxW = 100;
     const scale = Math.min(maxW / logo.w, maxH / logo.h);
     const w = logo.w * scale;
     const h = logo.h * scale;
@@ -216,7 +216,7 @@ export async function buildQuotePdf(data: QuotePdfData): Promise<jsPDF> {
   const sectionLabel = (text: string, yy: number) => {
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(10);
-    setText(primary);
+    setText(dark);
     doc.text(text, contentX, yy);
   };
 
@@ -307,7 +307,7 @@ export async function buildQuotePdf(data: QuotePdfData): Promise<jsPDF> {
   // FOOTER — pinned near the bottom, muted grey
   // =====================================================================
   const footerBottom = pageH - 18;
-  const termsColor: [number, number, number] = [90, 90, 90]; // darker than `muted` so the terms stay legible
+  const termsColor: [number, number, number] = [40, 55, 80];
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8.5);
   setText(termsColor);

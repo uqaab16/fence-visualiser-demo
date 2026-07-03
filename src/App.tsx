@@ -184,34 +184,29 @@ export default function App() {
 
   if (!isAuthenticated) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen w-full max-w-full bg-[#000000] text-zinc-100 font-sans p-4 relative overflow-hidden select-none">
+      <div className="flex flex-col items-center justify-center min-h-screen w-full max-w-full bg-[#0a1628] text-zinc-100 font-sans p-4 relative overflow-hidden select-none">
         
         {/* Ambient background accent */}
-        <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-rose-950/10 blur-3xl pointer-events-none" />
+        <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[#f97316]/5 blur-3xl pointer-events-none" />
         <div className="absolute -bottom-40 -right-40 w-96 h-96 rounded-full blur-3xl pointer-events-none" style={{ backgroundColor: CLIENT_CONFIG.logoAccentColor + '0d' }} />
         
         {/* Main login container */}
-        <div className="w-full max-w-[440px] bg-[#141517] border border-[#2f3136] rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden relative z-10 flex flex-col">
+        <div className="w-full max-w-[440px] bg-[#0d1b2e] border border-[#0a1628]/30 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden relative z-10 flex flex-col">
           
           {/* Header block with red fence badge */}
-          <div className="bg-[#0b0c0d] border-b border-[#2f3136] p-8 flex flex-col items-center">
+          <div className="bg-[#0a1628] border-b border-[#0a1628]/30 p-8 flex flex-col items-center">
             <div className="w-[76px] h-[76px] flex items-center justify-center rounded-lg shadow-lg mb-4" style={{ backgroundColor: CLIENT_CONFIG.logoAccentColor }}>
               <FenceLogo className="w-11 h-11 text-white animate-pulse" />
             </div>
             
             <div className="flex flex-col items-center select-none mt-2">
               <span className="text-[26px] font-black tracking-[0.05em] uppercase leading-none font-sans" style={{ color: CLIENT_CONFIG.primaryColor, letterSpacing: '0.04em' }}>
-                FENCING
+                {CLIENT_CONFIG.companyName}
               </span>
-              <div className="h-[16px] mt-1 flex items-center justify-end px-1.5 min-w-[130px] rounded-[1px]" style={{ backgroundColor: CLIENT_CONFIG.primaryColor }}>
-                <span className="text-[9px] font-black text-black tracking-[0.15em] uppercase leading-none">
-                  PRO
-                </span>
-              </div>
             </div>
             
-            <div className="border border-[#2f3136] bg-[#141517] px-3 py-1 mt-4 rounded-full">
-              <span className="text-[9px] font-bold text-zinc-400 tracking-[0.18em] uppercase">
+            <div className="border border-[#0a1628]/30 bg-[#0d1b2e] px-3 py-1 mt-4 rounded-full">
+              <span className="text-[9px] font-bold text-[#0a1628]/60 tracking-[0.18em] uppercase">
                 PORTAL ACCESS
               </span>
             </div>
@@ -220,7 +215,7 @@ export default function App() {
           {/* Form section */}
           <form onSubmit={handleLogin} className="p-8 flex flex-col gap-5">
             <div className="flex flex-col gap-1.5">
-              <label className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest leading-none">
+              <label className="text-[10px] font-bold text-[#0a1628]/60 uppercase tracking-widest leading-none">
                 Enterprise Password
               </label>
               <div className="relative mt-1">
@@ -229,21 +224,21 @@ export default function App() {
                   value={passwordInput}
                   onChange={(e) => setPasswordInput(e.target.value)}
                   placeholder="Enter access code"
-                  className="w-full h-11 bg-[#1a1b1f] border border-[#2f3136] focus:border-[#f20c32]/50 focus:ring-1 focus:ring-[#f20c32]/40 rounded-lg pl-10 pr-12 text-xs tracking-widest text-white placeholder-zinc-600 transition outline-none"
+                  className="w-full h-11 bg-[#1a1b1f] border border-[#0a1628]/30 focus:border-[#00aaff]/50 focus:ring-1 focus:ring-[#f97316]/40 rounded-lg pl-10 pr-12 text-xs tracking-widest text-white placeholder-zinc-600 transition outline-none"
                   autoFocus
                   required
                 />
-                <Lock className="w-3.5 h-3.5 text-zinc-500 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Lock className="w-3.5 h-3.5 text-[#0a1628]/50 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 h-7 w-7 bg-[#212327] hover:bg-[#2e3137] border border-zinc-700/50 hover:border-zinc-500 rounded-lg flex items-center justify-center text-zinc-400 hover:text-white transition-all shadow-sm focus:outline-none"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 h-7 w-7 bg-[#212327] hover:bg-[#2e3137] border border-[#0a1628]/40/50 hover:border-zinc-500 rounded-lg flex items-center justify-center text-[#0a1628]/60 hover:text-white transition-all shadow-sm focus:outline-none"
                   title={showPassword ? "Hide password" : "Show password"}
                 >
                   {showPassword ? (
-                    <EyeOff className="w-3.5 h-3.5 text-rose-500" />
+                    <EyeOff className="w-3.5 h-3.5 text-[#f97316]" />
                   ) : (
-                    <Eye className="w-3.5 h-3.5 text-zinc-400" />
+                    <Eye className="w-3.5 h-3.5 text-[#0a1628]/60" />
                   )}
                 </button>
               </div>
@@ -251,7 +246,7 @@ export default function App() {
 
             {/* Error Message */}
             {passwordError && (
-              <div className="bg-rose-950/20 border border-rose-900/40 rounded-lg p-3 flex items-start gap-2 text-rose-400">
+              <div className="bg-[#f97316]/10 border border-[#f97316]/20 rounded-lg p-3 flex items-start gap-2 text-[#f97316]">
                 <ShieldAlert className="w-4 h-4 shrink-0 mt-0.5" />
                 <span className="text-[11px] leading-normal font-medium">{passwordError}</span>
               </div>
@@ -264,9 +259,9 @@ export default function App() {
                   type="checkbox"
                   checked={rememberMe}
                   onChange={(e) => setRememberMe(e.target.checked)}
-                  className="w-3.5 h-3.5 accent-[#f20c32] bg-[#1a1b1f] border-zinc-700 rounded cursor-pointer"
+                  className="w-3.5 h-3.5 accent-[#f97316] bg-[#1a1b1f] border-[#0a1628]/40 rounded cursor-pointer"
                 />
-                <span className="text-[11px] text-zinc-400 font-sans">Remember login on this device</span>
+                <span className="text-[11px] text-[#0a1628]/60 font-sans">Remember login on this device</span>
               </label>
             </div>
 
@@ -281,14 +276,14 @@ export default function App() {
           </form>
 
           {/* Verification check lines */}
-          <div className="bg-[#0b0c0d] border-t border-[#2f3136] py-3.5 px-6 flex items-center justify-between text-[10px] text-zinc-500 font-mono">
+          <div className="bg-[#0a1628] border-t border-[#0a1628]/30 py-3.5 px-6 flex items-center justify-between text-[10px] text-[#0a1628]/50 font-mono">
             <span>{CLIENT_CONFIG.footerSecurityText}</span>
             <span>{CLIENT_CONFIG.footerSystemText}</span>
           </div>
         </div>
 
         {/* Legal copyright footer */}
-        <div className="text-[11px] font-mono text-zinc-500 text-center mt-6 tracking-wide select-none z-10 max-w-sm leading-relaxed">
+        <div className="text-[11px] font-mono text-[#0a1628]/50 text-center mt-6 tracking-wide select-none z-10 max-w-sm leading-relaxed">
           {CLIENT_CONFIG.loginFooterText}
         </div>
       </div>
@@ -296,11 +291,11 @@ export default function App() {
   }
 
   return (
-    <div className="flex flex-col h-screen w-full max-w-full bg-[#141517] text-zinc-100 overflow-hidden font-sans select-none">
+    <div className="flex flex-col h-screen w-full max-w-full bg-[#0d1b2e] text-zinc-100 overflow-hidden font-sans select-none">
       
       {/* Primary header brand bar exactly matching the Fencing Pro visual guidelines */}
       {!isFullScreen ? (
-        <header className="h-[76px] border-b border-[#2f3136] bg-[#000000] flex items-center justify-between px-0 shrink-0 z-40 shadow-xl">
+        <header className="h-[76px] border-b border-[#0a1628]/30 bg-[#0a1628] flex items-center justify-between px-0 shrink-0 z-40 shadow-xl">
           
           {/* Leftmost brand signature logo blocks based on input_file_1.png */}
           <div className="flex items-center h-full select-none shrink-0">
@@ -309,26 +304,21 @@ export default function App() {
               <FenceLogo className="w-11.5 h-11.5 text-white animate-pulse" />
             </div>
 
-            <div className="flex flex-col justify-center pl-6 pr-6 h-full border-r border-[#2f3136]">
+            <div className="flex flex-col justify-center pl-6 pr-6 h-full border-r border-[#0a1628]/30">
               <div className="flex flex-col select-none">
                 <span className="text-[25px] font-black tracking-[0.05em] uppercase leading-none font-sans" style={{ color: CLIENT_CONFIG.primaryColor, letterSpacing: '0.04em' }}>
-                  FENCING
+                  {CLIENT_CONFIG.companyName}
                 </span>
-                <div className="h-[15px] mt-1 flex items-center justify-end px-1.5 w-full" style={{ backgroundColor: CLIENT_CONFIG.primaryColor }}>
-                  <span className="text-[9px] font-black text-black tracking-[0.15em] uppercase leading-none">
-                    PRO
-                  </span>
-                </div>
               </div>
             </div>
           </div>
 
           {/* Corporate License & Identity details in the middle */}
-          <div className="hidden xl:flex flex-col items-start gap-0.5 text-zinc-400 font-sans px-4 shrink">
-            <div className="flex items-center gap-1.5 text-[10px] font-bold text-zinc-500 uppercase tracking-widest leading-none">
+          <div className="hidden xl:flex flex-col items-start gap-0.5 text-[#0a1628]/60 font-sans px-4 shrink">
+            <div className="flex items-center gap-1.5 text-[10px] font-bold text-[#0a1628]/50 uppercase tracking-widest leading-none">
               <span>{CLIENT_CONFIG.companyTagline.split(' · ')[0]}</span>
               <span className="text-zinc-700">&#8226;</span>
-              <span className="text-teal-400 font-bold">{CLIENT_CONFIG.companyTagline.split(' · ')[1]}</span>
+              <span className="text-[#00aaff] font-bold">{CLIENT_CONFIG.companyTagline.split(' · ')[1]}</span>
             </div>
             <span className="text-[11px] font-mono text-zinc-300 tracking-wider">
               {CLIENT_CONFIG.companyLegal}
@@ -336,19 +326,19 @@ export default function App() {
           </div>
 
           {/* Multi-info indicators */}
-          <div className="hidden 2xl:flex items-center gap-6 text-xs text-zinc-400 pl-4 border-l border-zinc-800 shrink">
+          <div className="hidden 2xl:flex items-center gap-6 text-xs text-[#0a1628]/60 pl-4 border-l border-[#0a1628]/30 shrink">
             <div className="flex items-center gap-1.5 pr-4 py-1">
-              <MapPin className="w-4 h-4 text-rose-500 shrink-0" />
+              <MapPin className="w-4 h-4 text-[#f97316] shrink-0" />
               <div className="flex flex-col">
-                <span className="text-[9px] text-zinc-500 font-bold uppercase leading-none">Market Level</span>
+                <span className="text-[9px] text-[#0a1628]/50 font-bold uppercase leading-none">Market Level</span>
                 <span className="text-white text-[11px] font-semibold mt-0.5">{CLIENT_CONFIG.marketRegion}</span>
               </div>
             </div>
 
-            <div className="flex items-center gap-1.5 pr-4 py-1 border-l border-zinc-800 pl-4">
-              <Clock className="w-4 h-4 text-rose-500 shrink-0" />
+            <div className="flex items-center gap-1.5 pr-4 py-1 border-l border-[#0a1628]/30 pl-4">
+              <Clock className="w-4 h-4 text-[#f97316] shrink-0" />
               <div className="flex flex-col">
-                <span className="text-[9px] text-zinc-500 font-bold uppercase leading-none">Fencing Standards</span>
+                <span className="text-[9px] text-[#0a1628]/50 font-bold uppercase leading-none">Fencing Standards</span>
                 <span className="text-white text-[11px] font-semibold mt-0.5">{CLIENT_CONFIG.fencingStandard}</span>
               </div>
             </div>
@@ -361,8 +351,8 @@ export default function App() {
               onClick={() => setIsLeftPanelOpen(!isLeftPanelOpen)}
               className={`p-2 rounded-lg flex items-center justify-center gap-1.5 text-xs font-semibold border transition-all cursor-pointer ${
                 isLeftPanelOpen
-                  ? 'bg-rose-500/10 text-rose-400 border-rose-500/20'
-                  : 'bg-zinc-800 hover:bg-zinc-700 text-zinc-400 border-zinc-700'
+                  ? 'bg-[#f97316]/10 text-[#f97316] border-[#f97316]/20'
+                  : 'bg-[#0f2035] hover:bg-[#122845] text-[#0a1628]/60 border-[#0a1628]/40'
               }`}
               title="Toggle left design control sidebar"
             >
@@ -375,8 +365,8 @@ export default function App() {
               onClick={() => setIsRightPanelOpen(!isRightPanelOpen)}
               className={`p-2 rounded-lg flex items-center justify-center gap-1.5 text-xs font-semibold border transition-all cursor-pointer ${
                 isRightPanelOpen
-                  ? 'bg-rose-500/10 text-rose-400 border-rose-500/20'
-                  : 'bg-zinc-800 hover:bg-zinc-700 text-zinc-400 border-zinc-700'
+                  ? 'bg-[#f97316]/10 text-[#f97316] border-[#f97316]/20'
+                  : 'bg-[#0f2035] hover:bg-[#122845] text-[#0a1628]/60 border-[#0a1628]/40'
               }`}
               title="Toggle right pricing breakdown sidebar"
             >
@@ -387,7 +377,7 @@ export default function App() {
             {/* Tutorial button */}
             <button
               onClick={() => setShowTutorial(true)}
-              className="p-2 bg-[#2b2d31] hover:bg-[#34363c] text-rose-300 rounded-lg transition-colors cursor-pointer border border-rose-500/15 flex items-center justify-center gap-1.5 text-xs font-semibold"
+              className="p-2 bg-[#122845] hover:bg-[#34363c] text-[#f97316] rounded-lg transition-colors cursor-pointer border border-[#f97316]/15 flex items-center justify-center gap-1.5 text-xs font-semibold"
             >
               <HelpCircle className="w-4 h-4" />
               <span className="hidden sm:inline">Guide</span>
@@ -408,7 +398,7 @@ export default function App() {
       ) : null}
 
       {/* Primary visualizer studio board split */}
-      <div className="flex-1 flex flex-row overflow-hidden min-h-0 bg-[#141517] relative">
+      <div className="flex-1 flex flex-row overflow-hidden min-h-0 bg-[#0d1b2e] relative">
         
         {/* Step-by-step customizer on LHS */}
         {!isFullScreen && (
@@ -468,13 +458,13 @@ export default function App() {
         )}
 
         {/* Interactive Visualizer Canvas in Center */}
-        <div className={`flex-1 min-w-0 p-5.5 flex flex-col min-h-0 relative z-10 transition-all duration-300 ${isFullScreen ? 'fixed inset-0 z-50 bg-[#141517] p-0' : ''}`}>
+        <div className={`flex-1 min-w-0 p-5.5 flex flex-col min-h-0 relative z-10 transition-all duration-300 ${isFullScreen ? 'fixed inset-0 z-50 bg-[#0d1b2e] p-0' : ''}`}>
           
           {/* Persistent Touch/Click-Friendly Expand Edge Handles on borders of Canvas */}
           {!isLeftPanelOpen && !isFullScreen && (
             <button
               onClick={() => setIsLeftPanelOpen(true)}
-              className="absolute left-6 top-1/2 -translate-y-1/2 bg-teal-500 hover:bg-teal-400 text-[#141517] w-8 h-20 rounded-r-xl flex flex-col items-center justify-center shadow-2xl z-40 transition-all group border-l border-teal-300/30 cursor-pointer"
+              className="absolute left-6 top-1/2 -translate-y-1/2 bg-[#f97316] hover:bg-[#f97316] text-[#141517] w-8 h-20 rounded-r-xl flex flex-col items-center justify-center shadow-2xl z-40 transition-all group border-l border-[#f97316]/30 cursor-pointer"
               title="Expand Design Controls Panel"
             >
               <ChevronRight className="w-5 h-5 animate-bounce" />
@@ -485,7 +475,7 @@ export default function App() {
           {!isRightPanelOpen && !isFullScreen && (
             <button
               onClick={() => setIsRightPanelOpen(true)}
-              className="absolute right-6 top-1/2 -translate-y-1/2 bg-teal-500 hover:bg-teal-400 text-[#141517] w-8 h-20 rounded-l-xl flex flex-col items-center justify-center shadow-2xl z-40 transition-all group border-r border-[#2f3136] cursor-pointer"
+              className="absolute right-6 top-1/2 -translate-y-1/2 bg-[#f97316] hover:bg-[#f97316] text-[#141517] w-8 h-20 rounded-l-xl flex flex-col items-center justify-center shadow-2xl z-40 transition-all group border-r border-[#0a1628]/30 cursor-pointer"
               title="Expand Price Estimate Panel"
             >
               <ChevronLeft className="w-5 h-5 animate-bounce" />
@@ -527,7 +517,7 @@ export default function App() {
         {/* Detailed Itemized Estimates and Actions panel on RHS */}
         {!isFullScreen && (
           <div className={`transition-all duration-300 ease-in-out h-full overflow-hidden shrink-0 ${
-            isRightPanelOpen ? 'w-80 sm:w-92 opacity-100 border-l border-[#2f3136]' : 'w-0 opacity-0 pointer-events-none'
+            isRightPanelOpen ? 'w-80 sm:w-92 opacity-100 border-l border-[#0a1628]/30' : 'w-0 opacity-0 pointer-events-none'
           }`}>
             <EstimateSummary
               material={material}
@@ -548,58 +538,58 @@ export default function App() {
       {/* HOW-IT-WORKS SYSTEM OVERLAY MODAL */}
       {showTutorial && (
         <div className="fixed inset-0 bg-black/90 backdrop-blur-md z-50 flex items-center justify-center p-4 select-none">
-          <div className="bg-[#1f2125] border border-zinc-700 w-full max-w-xl rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[85vh]">
+          <div className="bg-[#0f2035] border border-[#0a1628]/40 w-full max-w-xl rounded-2xl overflow-hidden shadow-2xl flex flex-col max-h-[85vh]">
             
-            <div className="px-6 py-4.5 bg-[#141517] border-b border-[#2f3136] flex items-center justify-between">
-              <span className="text-xs font-bold text-white uppercase tracking-wider">Fencing Pro Companion Guide</span>
+            <div className="px-6 py-4.5 bg-[#0d1b2e] border-b border-[#0a1628]/30 flex items-center justify-between">
+              <span className="text-xs font-bold text-white uppercase tracking-wider">{CLIENT_CONFIG.companyName} Companion Guide</span>
               <button 
                 onClick={() => setShowTutorial(false)}
-                className="text-zinc-500 hover:text-white transition cursor-pointer"
+                className="text-[#0a1628]/50 hover:text-white transition cursor-pointer"
               >
                 CLOSE [x]
               </button>
             </div>
 
             <div className="p-6 overflow-y-auto flex flex-col gap-5 leading-relaxed text-zinc-300 font-sans">
-              <h3 className="text-sm font-extrabold text-rose-500 uppercase tracking-widest leading-none">Interactive Visual Boundary Controls</h3>
-              <p className="text-xs text-zinc-400">
-                This simulator is designed to give Fencing Pro consultants and their respected clients a professional edge by overlaying highly accurate, responsive boundary design mockups onto residential properties.
+              <h3 className="text-sm font-extrabold text-[#f97316] uppercase tracking-widest leading-none">Interactive Visual Boundary Controls</h3>
+              <p className="text-xs text-[#0a1628]/60">
+                This simulator is designed to give {CLIENT_CONFIG.companyName} consultants and their respected clients a professional edge by overlaying highly accurate, responsive boundary design mockups onto residential properties.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-1">
-                <div className="bg-[#18191c] p-4.5 rounded-xl border border-zinc-800">
+                <div className="bg-[#18191c] p-4.5 rounded-xl border border-[#0a1628]/30">
                   <span className="text-xs font-bold text-white block mb-1">📌 Drag Anchor Handles</span>
-                  <p className="text-[11px] text-zinc-400 leading-normal">
+                  <p className="text-[11px] text-[#0a1628]/60 leading-normal">
                     Drag the circular anchors overlaying the grass to stretch and fit the fence directly along lawn contours. It calculates matching spatial spacing and physical structural lengths.
                   </p>
                 </div>
                 
-                <div className="bg-[#18191c] p-4.5 rounded-xl border border-zinc-800">
+                <div className="bg-[#18191c] p-4.5 rounded-xl border border-[#0a1628]/30">
                   <span className="text-xs font-bold text-white block mb-1">🎨 Premium Colors Palette</span>
-                  <p className="text-[11px] text-zinc-400 leading-normal">
+                  <p className="text-[11px] text-[#0a1628]/60 leading-normal">
                     Select between Monument, Surfmist, Basalt, or Hardwood Woodgrains. Contrast colors by assigning separate finishes to vertical posts and horizontal slats.
                   </p>
                 </div>
 
-                <div className="bg-[#18191c] p-4.5 rounded-xl border border-zinc-800">
+                <div className="bg-[#18191c] p-4.5 rounded-xl border border-[#0a1628]/30">
                   <span className="text-xs font-bold text-white block mb-1">🗒 Interactive Post & Slat Editors</span>
-                  <p className="text-[11px] text-zinc-400 leading-normal">
+                  <p className="text-[11px] text-[#0a1628]/60 leading-normal">
                     Click any post directly on canvas to upgrade to standard, corner, H-post, gate support, or decorative columns. Click any fence segment to mount gates and slide their width.
                   </p>
                 </div>
 
-                <div className="bg-[#18191c] p-4.5 rounded-xl border border-zinc-800">
+                <div className="bg-[#18191c] p-4.5 rounded-xl border border-[#0a1628]/30">
                   <span className="text-xs font-bold text-white block mb-1">📸 Client Photo Overlay</span>
-                  <p className="text-[11px] text-zinc-400 leading-normal">
+                  <p className="text-[11px] text-[#0a1628]/60 leading-normal">
                     Snap a photo of the client's property, upload it directly with the <strong>Upload Photo</strong> button on the canvas, and trace the mockup on their real home grounds!
                   </p>
                 </div>
               </div>
 
-              <div className="border-t border-[#2f3136] pt-4 flex justify-end">
+              <div className="border-t border-[#0a1628]/30 pt-4 flex justify-end">
                 <button
                   onClick={() => setShowTutorial(false)}
-                  className="bg-rose-600 hover:bg-rose-500 text-white font-bold px-5 py-2.5 rounded-xl text-xs uppercase cursor-pointer"
+                  className="bg-[#f97316] hover:bg-[#f97316] text-white font-bold px-5 py-2.5 rounded-xl text-xs uppercase cursor-pointer"
                 >
                   Embark Design
                 </button>
