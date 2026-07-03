@@ -100,6 +100,7 @@ export async function buildQuotePdf(data: QuotePdfData): Promise<jsPDF> {
   const primary = hexToRgb(CLIENT_CONFIG.primaryColor);
   const onPrimary = hexToRgb(getContrastTextColor(CLIENT_CONFIG.primaryColor)); // #000 or #fff
   const infoBg = tint(primary, 0.15); // 15% brand tint on white
+  const heading: [number, number, number] = [0, 170, 255]; // #00aaff light blue for section headings
   const pillBg: [number, number, number] = [235, 240, 248];
   const dark: [number, number, number] = [10, 22, 40];
   const muted: [number, number, number] = [60, 75, 100];
@@ -182,7 +183,7 @@ export async function buildQuotePdf(data: QuotePdfData): Promise<jsPDF> {
     let cy = infoY;
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(8);
-    setText(primary);
+    setText(heading);
     doc.text(label, x, cy);
     cy += 14;
     doc.setFont('helvetica', 'normal');
@@ -216,7 +217,7 @@ export async function buildQuotePdf(data: QuotePdfData): Promise<jsPDF> {
   const sectionLabel = (text: string, yy: number) => {
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(10);
-    setText(dark);
+    setText(heading);
     doc.text(text, contentX, yy);
   };
 

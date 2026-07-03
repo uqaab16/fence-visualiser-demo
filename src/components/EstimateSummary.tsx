@@ -374,7 +374,7 @@ export default function EstimateSummary({
       {/* Title block */}
       <div className="flex items-center justify-between">
         <h4 className="text-xs font-bold uppercase tracking-wider text-[#f97316] flex items-center gap-2">
-          <Calculator className="w-4 h-4 text-[#0a1628]/60" />
+          <Calculator className="w-4 h-4 text-white/70" />
           Live Cost Breakdown
         </h4>
         <div className="flex items-center gap-1.5">
@@ -384,7 +384,7 @@ export default function EstimateSummary({
           {setIsRightPanelOpen && (
             <button
               onClick={() => setIsRightPanelOpen(false)}
-              className="p-1 hover:bg-[#0f2035] text-[#0a1628]/50 hover:text-white/70 rounded transition cursor-pointer"
+              className="p-1 hover:bg-[#0f2035] text-white/50 hover:text-white/70 rounded transition cursor-pointer"
               title="Collapse estimate panel"
             >
               <X className="w-3.5 h-3.5" />
@@ -398,17 +398,17 @@ export default function EstimateSummary({
         <div className="flex justify-between items-center border-b border-[#0a1628]/30 pb-2">
           <div className="flex flex-col">
             <span className="text-xs font-bold text-white tracking-tight">{FENCE_PRICES[material].label}</span>
-            <span className="text-[10px] text-[#0a1628]/60 font-semibold">{height}mm height &bull; {color.name} finish</span>
+            <span className="text-[10px] text-white/70 font-semibold">{height}mm height &bull; {color.name} finish</span>
           </div>
           <span className="text-xs font-bold text-[#f97316] font-mono text-right">{estimate.totalMeters}m</span>
         </div>
 
-        <div className="flex justify-between text-[11px] text-[#0a1628]/60">
+        <div className="flex justify-between text-[11px] text-white/70">
           <span>Boundary Posts:</span>
           <span className="font-mono text-white/70 font-semibold">{estimate.postCount} pillars</span>
         </div>
 
-        <div className="flex justify-between text-[11px] text-[#0a1628]/60">
+        <div className="flex justify-between text-[11px] text-white/70">
           <span>Gates integrated:</span>
           <span className="font-mono text-white/70 font-semibold">{gatesList.length} swing gates</span>
         </div>
@@ -434,35 +434,35 @@ export default function EstimateSummary({
       {/* Detailed line item estimations bill */}
       <div className="flex flex-col gap-2.5 mt-1">
         {/* Item 1: Panels */}
-        <div className="flex justify-between text-xs text-[#0a1628]/60">
-          <span className="flex items-center gap-1.5"><Truck className="w-3.5 h-3.5 text-[#0a1628]/50" /> Boundary Panels ({estimate.totalMeters}m)</span>
+        <div className="flex justify-between text-xs text-white/70">
+          <span className="flex items-center gap-1.5"><Truck className="w-3.5 h-3.5 text-white/50" /> Boundary Panels ({estimate.totalMeters}m)</span>
           <span className="font-mono text-white">${estimate.materialCost.toLocaleString()}</span>
         </div>
         
         {/* Item 2: Upgrades */}
-        <div className="flex justify-between text-xs text-[#0a1628]/60">
-          <span className="flex items-center gap-1.5"><Sparkles className="w-3.5 h-3.5 text-[#0a1628]/50" /> Structural Post Upgrades</span>
+        <div className="flex justify-between text-xs text-white/70">
+          <span className="flex items-center gap-1.5"><Sparkles className="w-3.5 h-3.5 text-white/50" /> Structural Post Upgrades</span>
           <span className="font-mono text-white">${estimate.postsCost.toLocaleString()}</span>
         </div>
 
         {/* Item 3: Gates */}
         {estimate.gatesCost > 0 && (
-          <div className="flex justify-between text-xs text-[#0a1628]/60">
-            <span className="flex items-center gap-1.5"><FileCheck className="w-3.5 h-3.5 text-[#0a1628]/50" /> Premium Swing Gates</span>
+          <div className="flex justify-between text-xs text-white/70">
+            <span className="flex items-center gap-1.5"><FileCheck className="w-3.5 h-3.5 text-white/50" /> Premium Swing Gates</span>
             <span className="font-mono text-white">${estimate.gatesCost.toLocaleString()}</span>
           </div>
         )}
 
         {/* Item 4: Ancillaries (Concrete / Fasteners) */}
-        <div className="flex justify-between text-xs text-[#0a1628]/60">
-          <span className="flex items-center gap-1.5"><Building2 className="w-3.5 h-3.5 text-[#0a1628]/50" /> Fast-Set Concrete ({estimate.concreteBagsCount} bags)</span>
+        <div className="flex justify-between text-xs text-white/70">
+          <span className="flex items-center gap-1.5"><Building2 className="w-3.5 h-3.5 text-white/50" /> Fast-Set Concrete ({estimate.concreteBagsCount} bags)</span>
           <span className="font-mono text-white">${estimate.concreteCost.toLocaleString()}</span>
         </div>
 
         {/* Item 5: Installer labour */}
         {includeInstall && (
-          <div className="flex justify-between text-xs text-[#0a1628]/60">
-            <span className="flex items-center gap-1.5"><Wrench className="w-3.5 h-3.5 text-[#0a1628]/50" /> Certified Installation Crew</span>
+          <div className="flex justify-between text-xs text-white/70">
+            <span className="flex items-center gap-1.5"><Wrench className="w-3.5 h-3.5 text-white/50" /> Certified Installation Crew</span>
             <span className="font-mono text-white">${estimate.laborCost.toLocaleString()}</span>
           </div>
         )}
@@ -514,7 +514,7 @@ export default function EstimateSummary({
           </button>
         </div>
         {pdfStatus && (
-          <p className="text-[10px] text-[#0a1628]/60 leading-relaxed text-center px-1">{pdfStatus}</p>
+          <p className="text-[10px] text-white/70 leading-relaxed text-center px-1">{pdfStatus}</p>
         )}
       </div>
 
@@ -522,13 +522,13 @@ export default function EstimateSummary({
       <div className="mt-auto border-t border-[#0a1628]/30 pt-3 flex flex-col gap-2.5 relative z-30 pointer-events-auto">
         <button
           onClick={() => setShowCRMInbox(!showCRMInbox)}
-          className="flex w-full items-center justify-between text-xs text-[#0a1628]/60 hover:text-white transition cursor-pointer py-1 relative z-30 pointer-events-auto"
+          className="flex w-full items-center justify-between text-xs text-white/70 hover:text-white transition cursor-pointer py-1 relative z-30 pointer-events-auto"
         >
           <span className="flex items-center gap-1.5">
             <History className="w-4 h-4 text-[#f97316]" />
             <span className="font-bold">{CLIENT_CONFIG.companyName} Proposal Log</span>
           </span>
-          <span className="font-mono text-[10px] bg-[#0f2035] text-[#0a1628]/60 px-2.5 py-0.5 rounded-full">
+          <span className="font-mono text-[10px] bg-[#0f2035] text-white/70 px-2.5 py-0.5 rounded-full">
             {sentInquiries.length} Inquiries
           </span>
         </button>
@@ -536,29 +536,29 @@ export default function EstimateSummary({
         {showCRMInbox && (
           <div className="flex flex-col gap-2 p-3 rounded-xl border max-h-52 overflow-y-auto bg-[#0f2035] border-[#0a1628]/30 relative z-30 pointer-events-auto">
             <div className="flex justify-between items-center text-[10px] border-b pb-1.5 mb-1.5 border-[#0a1628]/30">
-              <span className="font-semibold uppercase text-[#0a1628]/60">Interactive Ledger</span>
+              <span className="font-semibold uppercase text-white/70">Interactive Ledger</span>
               <button onClick={clearCRMInboxes} className="text-[#f97316] hover:text-[#f97316] text-[10px] font-sans font-medium cursor-pointer">
                 Clear All
               </button>
             </div>
 
             {sentInquiries.length === 0 ? (
-              <span className="text-[10px] text-[#0a1628]/50 text-center py-4 italic">No submitted designs yet. Submit custom requests to log them here.</span>
+              <span className="text-[10px] text-white/50 text-center py-4 italic">No submitted designs yet. Submit custom requests to log them here.</span>
             ) : (
               sentInquiries.map((inq) => (
                 <div 
                   key={inq.id}
                   onClick={() => { setSelectedPastInquiry(inq); setRecordPdfStatus(''); }}
                   title="Click to view full inquiry details"
-                  className="text-[10px] border-b pb-2 flex flex-col gap-1 px-2 py-2 rounded transition-all text-[#0a1628]/60 border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white cursor-pointer"
+                  className="text-[10px] border-b pb-2 flex flex-col gap-1 px-2 py-2 rounded transition-all text-white/70 border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white cursor-pointer"
                 >
                   <div className="flex justify-between font-bold leading-tight text-white mb-0.5">
                     <span className="underline decoration-dotted text-[#f97316]">{inq.fullName}</span>
                     <span className="text-[#00aaff] font-mono">${inq.totalCost.toLocaleString()}</span>
                   </div>
-                  <div className="text-[9px] text-[#0a1628]/50 flex items-center justify-between mt-0.5 font-sans">
+                  <div className="text-[9px] text-white/50 flex items-center justify-between mt-0.5 font-sans">
                     <span>{inq.planSummary?.material || "Fence Block"} ({inq.fenceLength}m)</span>
-                    <span className="text-[#0a1628]/50 font-mono">{inq.createdAt}</span>
+                    <span className="text-white/50 font-mono">{inq.createdAt}</span>
                   </div>
                   <p className="text-[9.5px] leading-relaxed mt-1 italic font-light p-1.5 rounded border text-white/70 bg-[#0d1b2e] border-[#0a1628]/30 line-clamp-1">
                     Address: {inq.address}
@@ -583,7 +583,7 @@ export default function EstimateSummary({
               </div>
               <button 
                 onClick={() => setSelectedPastInquiry(null)}
-                className="text-[#0a1628]/60 hover:text-white transition p-1 cursor-pointer"
+                className="text-white/70 hover:text-white transition p-1 cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -592,7 +592,7 @@ export default function EstimateSummary({
             {/* Modal Body */}
             <div className="p-6 overflow-y-auto flex-1 flex flex-col gap-5">
               <div className="bg-[#0f2035] p-4 rounded-xl border border-[#0a1628]/30 flex flex-col gap-2">
-                <span className="text-[10px] text-[#0a1628]/50 font-bold uppercase tracking-wider">Layout Specifications</span>
+                <span className="text-[10px] text-white/50 font-bold uppercase tracking-wider">Layout Specifications</span>
                 <ul className="text-xs text-white/70 grid grid-cols-2 gap-y-1.5 gap-x-3.5 list-disc pl-4">
                   <li>Material: <b className="text-white">{selectedPastInquiry.planSummary?.material || "Slat Fencing"}</b></li>
                   <li>Height: <b className="text-white">{selectedPastInquiry.planSummary?.height || 1200}mm</b></li>
@@ -612,35 +612,35 @@ export default function EstimateSummary({
                 
                 <div className="grid grid-cols-2 gap-3 text-xs">
                   <div className="bg-[#0f2035] p-3 rounded-lg border border-[#0a1628]/30">
-                    <span className="text-[10px] text-[#0a1628]/50 font-medium block">Full Name</span>
+                    <span className="text-[10px] text-white/50 font-medium block">Full Name</span>
                     <span className="text-white font-semibold">{selectedPastInquiry.fullName}</span>
                   </div>
                   <div className="bg-[#0f2035] p-3 rounded-lg border border-[#0a1628]/30">
-                    <span className="text-[10px] text-[#0a1628]/50 font-medium block">Phone</span>
+                    <span className="text-[10px] text-white/50 font-medium block">Phone</span>
                     <span className="text-white font-mono">{selectedPastInquiry.phone}</span>
                   </div>
                 </div>
 
                 <div className="bg-[#0f2035] p-3 rounded-lg border border-[#0a1628]/30 text-xs">
-                  <span className="text-[10px] text-[#0a1628]/50 font-medium block">Email Address</span>
+                  <span className="text-[10px] text-white/50 font-medium block">Email Address</span>
                   <span className="text-white font-mono">{selectedPastInquiry.email}</span>
                 </div>
 
                 <div className="bg-[#0f2035] p-3 rounded-lg border border-[#0a1628]/30 text-xs">
-                  <span className="text-[10px] text-[#0a1628]/50 font-medium block">{CLIENT_CONFIG.regionState + " Site Address"}</span>
+                  <span className="text-[10px] text-white/50 font-medium block">{CLIENT_CONFIG.regionState + " Site Address"}</span>
                   <span className="text-white">{selectedPastInquiry.address}</span>
                 </div>
 
                 {selectedPastInquiry.message && (
                   <div className="bg-[#0f2035] p-3 rounded-lg border border-[#0a1628]/30 text-xs">
-                    <span className="text-[10px] text-[#0a1628]/50 font-medium block">Site Remarks / Notes</span>
+                    <span className="text-[10px] text-white/50 font-medium block">Site Remarks / Notes</span>
                     <p className="text-white/70 italic mt-1 font-light leading-relaxed">
                       "{selectedPastInquiry.message}"
                     </p>
                   </div>
                 )}
                
-                <div className="text-[10px] text-[#0a1628]/50 font-mono text-right mt-1">
+                <div className="text-[10px] text-white/50 font-mono text-right mt-1">
                   Submitted On: {selectedPastInquiry.createdAt}
                 </div>
               </div>
@@ -671,7 +671,7 @@ export default function EstimateSummary({
                   </button>
                 </div>
                 {recordPdfStatus && (
-                  <p className="text-[10px] text-[#0a1628]/60 leading-relaxed text-center px-1">{recordPdfStatus}</p>
+                  <p className="text-[10px] text-white/70 leading-relaxed text-center px-1">{recordPdfStatus}</p>
                 )}
               </div>
             </div>
@@ -702,7 +702,7 @@ export default function EstimateSummary({
               </div>
               <button 
                 onClick={() => setShowQuoteModal(false)}
-                className="text-[#0a1628]/60 hover:text-white transition p-1 cursor-pointer"
+                className="text-white/70 hover:text-white transition p-1 cursor-pointer"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -714,7 +714,7 @@ export default function EstimateSummary({
               {!isSubmitted ? (
                 <form onSubmit={handleFormSubmit} className="flex flex-col gap-4">
                   <div className="bg-[#0f2035] p-4 rounded-xl border border-[#0a1628]/30 flex flex-col gap-2">
-                    <span className="text-[10px] text-[#0a1628]/50 font-bold uppercase tracking-wider">Configured Layout Specifications</span>
+                    <span className="text-[10px] text-white/50 font-bold uppercase tracking-wider">Configured Layout Specifications</span>
                     <ul className="text-xs text-white/70 grid grid-cols-2 gap-y-1.5 gap-x-3.5 list-disc pl-4">
                       <li>Material: <b className="text-white">{FENCE_PRICES[material].label}</b></li>
                       <li>Height: <b className="text-white">{height}mm</b></li>
@@ -734,7 +734,7 @@ export default function EstimateSummary({
                     
                     {/* Full Name field */}
                     <div className="flex flex-col gap-1">
-                      <label htmlFor="customer_full_name" className="text-[10px] text-[#0a1628]/60 font-medium">Customer Full Name*</label>
+                      <label htmlFor="customer_full_name" className="text-[10px] text-white/70 font-medium">Customer Full Name*</label>
                       <input
                         id="customer_full_name"
                         type="text"
@@ -749,7 +749,7 @@ export default function EstimateSummary({
                     {/* Contact grid */}
                     <div className="grid grid-cols-2 gap-3">
                       <div className="flex flex-col gap-1">
-                        <label htmlFor="customer_email" className="text-[10px] text-[#0a1628]/60 font-medium">Email Address*</label>
+                        <label htmlFor="customer_email" className="text-[10px] text-white/70 font-medium">Email Address*</label>
                         <input
                           id="customer_email"
                           type="email"
@@ -762,7 +762,7 @@ export default function EstimateSummary({
                       </div>
                       
                       <div className="flex flex-col gap-1">
-                        <label htmlFor="customer_phone" className="text-[10px] text-[#0a1628]/60 font-medium">Australian Mobile*</label>
+                        <label htmlFor="customer_phone" className="text-[10px] text-white/70 font-medium">Australian Mobile*</label>
                         <input
                           id="customer_phone"
                           type="text"
@@ -777,7 +777,7 @@ export default function EstimateSummary({
 
                     {/* Site Boundary address */}
                     <div className="flex flex-col gap-1">
-                      <label htmlFor="site_location" className="text-[10px] text-[#0a1628]/60 font-medium">{CLIENT_CONFIG.regionState + " Site Address*"}</label>
+                      <label htmlFor="site_location" className="text-[10px] text-white/70 font-medium">{CLIENT_CONFIG.regionState + " Site Address*"}</label>
                       <input
                         id="site_location"
                         type="text"
@@ -791,7 +791,7 @@ export default function EstimateSummary({
 
                     {/* Direct instructions memo */}
                     <div className="flex flex-col gap-1">
-                      <label htmlFor="quote_enquiry_message" className="text-[10px] text-[#0a1628]/60 font-medium">Additional Site Notes</label>
+                      <label htmlFor="quote_enquiry_message" className="text-[10px] text-white/70 font-medium">Additional Site Notes</label>
                       <textarea
                         id="quote_enquiry_message"
                         rows={2.5}
@@ -836,14 +836,14 @@ export default function EstimateSummary({
                   </div>
                   <div>
                     <h4 className="text-base font-extrabold text-white font-sans uppercase">Proposal Generated!</h4>
-                    <p className="text-xs text-[#0a1628]/60 leading-relaxed mt-2.5 max-w-[340px] mx-auto">
+                    <p className="text-xs text-white/70 leading-relaxed mt-2.5 max-w-[340px] mx-auto">
                       Thank you! Clear-cut costings have been saved inside the interactive fencer log ledger below. Your business bid is formatted for printing.
                     </p>
                   </div>
 
                   <div className="bg-[#0f2035] p-4 rounded-xl border border-[#0a1628]/30 w-full text-left mt-3">
-                    <span className="text-[9px] text-[#0a1628]/50 font-extrabold uppercase tracking-widest block mb-1">{CLIENT_CONFIG.companyName} Proposal Receipt</span>
-                    <span className="text-[9.5px] text-[#0a1628]/50 font-extrabold uppercase block mb-3 font-mono">{CLIENT_CONFIG.companyLegalShort}</span>
+                    <span className="text-[9px] text-white/50 font-extrabold uppercase tracking-widest block mb-1">{CLIENT_CONFIG.companyName} Proposal Receipt</span>
+                    <span className="text-[9.5px] text-white/50 font-extrabold uppercase block mb-3 font-mono">{CLIENT_CONFIG.companyLegalShort}</span>
                     <div className="grid grid-cols-2 gap-y-1.5 text-[11px] text-white/70">
                       <span>Proposal ID:</span>
                       <span className="font-mono text-[#f97316] text-right font-bold">#{CLIENT_CONFIG.proposalIdPrefix}-{Date.now().toString().slice(-5)}</span>

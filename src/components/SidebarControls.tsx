@@ -110,7 +110,7 @@ export default function SidebarControls({
           {/* Logo element representing Fencing Pro */}
           <div className="flex flex-col items-center gap-1.5 px-1 pb-4 border-b border-[#222] w-full text-center">
             <Fence className="w-6.5 h-6.5 text-[#00aaff]" />
-            <span className="text-[10px] uppercase font-bold tracking-widest text-[#0a1628]/60 font-sans leading-none">{CLIENT_CONFIG.companyName.split(' ')[0]}</span>
+            <span className="text-[10px] uppercase font-bold tracking-widest text-white/70 font-sans leading-none">{CLIENT_CONFIG.companyName.split(' ')[0]}</span>
             <span className="text-[10px] uppercase font-bold tracking-widest text-[#00aaff] font-sans leading-none font-mono">{CLIENT_CONFIG.companyName.split(' ')[1]}</span>
           </div>
 
@@ -123,7 +123,7 @@ export default function SidebarControls({
               className={`flex flex-col items-center gap-1.5 py-3 rounded-xl transition cursor-pointer select-none ${
                 activeTab === 'material' 
                   ? 'bg-[#0f2035] text-[#00aaff] border border-[#0a1628]/30 shadow-md' 
-                  : 'text-[#0a1628]/50 hover:text-white/70 hover:bg-[#0f2035]/50'
+                  : 'text-white/50 hover:text-white/70 hover:bg-[#0f2035]/50'
               }`}
             >
               <Fence className="w-5 h-5" />
@@ -136,7 +136,7 @@ export default function SidebarControls({
               className={`flex flex-col items-center gap-1.5 py-3 rounded-xl transition cursor-pointer select-none ${
                 activeTab === 'color' 
                   ? 'bg-[#0f2035] text-[#00aaff] border border-[#0a1628]/30 shadow-md' 
-                  : 'text-[#0a1628]/50 hover:text-white/70 hover:bg-[#0f2035]/50'
+                  : 'text-white/50 hover:text-white/70 hover:bg-[#0f2035]/50'
               }`}
             >
               <Palette className="w-5 h-5" />
@@ -149,7 +149,7 @@ export default function SidebarControls({
               className={`flex flex-col items-center gap-1.5 py-3 rounded-xl transition cursor-pointer select-none ${
                 activeTab === 'posts' 
                   ? 'bg-[#0f2035] text-[#00aaff] border border-[#0a1628]/30 shadow-md' 
-                  : 'text-[#0a1628]/50 hover:text-white/70 hover:bg-[#0f2035]/50'
+                  : 'text-white/50 hover:text-white/70 hover:bg-[#0f2035]/50'
               }`}
             >
               <Columns3 className="w-5 h-5" />
@@ -162,7 +162,7 @@ export default function SidebarControls({
               className={`flex flex-col items-center gap-1.5 py-3 rounded-xl transition cursor-pointer select-none ${
                 activeTab === 'gates' 
                   ? 'bg-[#0f2035] text-[#00aaff] border border-[#0a1628]/30 shadow-md' 
-                  : 'text-[#0a1628]/50 hover:text-white/70 hover:bg-[#0f2035]/50'
+                  : 'text-white/50 hover:text-white/70 hover:bg-[#0f2035]/50'
               }`}
             >
               <DoorClosed className="w-5 h-5" />
@@ -184,7 +184,7 @@ export default function SidebarControls({
             className={`flex flex-col items-center gap-1.5 py-2.5 w-14 rounded-xl transition cursor-pointer select-none mb-3 ${
               activeTab === 'settings' 
                 ? 'bg-[#0f2035] text-[#00aaff] border border-[#0a1628]/30 shadow-md' 
-                : 'text-[#0a1628]/50 hover:text-white/70 hover:bg-[#0f2035]/50'
+                : 'text-white/50 hover:text-white/70 hover:bg-[#0f2035]/50'
             }`}
           >
             <Settings className="w-[18px] h-[18px]" />
@@ -194,10 +194,10 @@ export default function SidebarControls({
           {setIsLeftPanelOpen && (
             <button
               onClick={() => setIsLeftPanelOpen(false)}
-              className="flex flex-col items-center gap-1 py-2 w-12 hover:bg-[#0f2035]/40 text-[#0a1628]/50 hover:text-white rounded-xl transition cursor-pointer mb-3.5"
+              className="flex flex-col items-center gap-1 py-2 w-12 hover:bg-[#0f2035]/40 text-white/50 hover:text-white rounded-xl transition cursor-pointer mb-3.5"
               title="Collapse Design Panel"
             >
-              <ChevronLeft className="w-4 h-4 text-[#0a1628]/60" />
+              <ChevronLeft className="w-4 h-4 text-white/70" />
               <span className="text-[9px] font-bold uppercase tracking-widest text-center mt-0.5">Close</span>
             </button>
           )}
@@ -215,7 +215,7 @@ export default function SidebarControls({
           <div className="flex flex-col gap-5">
             <div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#00aaff]">Step 1: Fence Material</h4>
-              <p className="text-xs text-[#0a1628]/60 mt-1">Select structural fence style to visualise as overlay</p>
+              <p className="text-xs text-white/70 mt-1">Select structural fence style to visualise as overlay</p>
             </div>
 
             {/* List of custom fencing types cards */}
@@ -242,8 +242,8 @@ export default function SidebarControls({
                     {/* Meta info info */}
                     <div className="flex flex-col gap-0.5 max-w-[190px]">
                       <span className="text-xs font-bold text-white leading-snug">{card.title}</span>
-                      <span className="text-[10px] text-[#0a1628]/60 leading-none">{card.subtitle}</span>
-                      <p className="text-[10px] text-[#0a1628]/50 leading-relaxed mt-1 hidden group-hover:block transition-all">
+                      <span className="text-[10px] text-white/70 leading-none">{card.subtitle}</span>
+                      <p className="text-[10px] text-white/50 leading-relaxed mt-1 hidden group-hover:block transition-all">
                         {card.desc}
                       </p>
                     </div>
@@ -251,7 +251,7 @@ export default function SidebarControls({
                     {/* Price stamp */}
                     <div className="absolute right-3.5 top-3 flex flex-col items-end">
                       <span className="text-[10px] font-bold text-[#00aaff]">${FENCE_PRICES[card.id].basePerMeter}/m</span>
-                      <span className="text-[8px] text-[#0a1628]/50 font-mono">supply</span>
+                      <span className="text-[8px] text-white/50 font-mono">supply</span>
                     </div>
 
                     {/* Active Check Circle indicator */}
@@ -269,10 +269,10 @@ export default function SidebarControls({
             <div className="border-t border-[#0a1628]/30 pt-4.5 flex flex-col gap-2.5">
               <div className="flex items-center justify-between">
                 <span className="text-xs font-bold uppercase tracking-wider text-[#00aaff] flex items-center gap-1.5">
-                  <Ruler className="w-3.5 h-3.5 text-[#0a1628]/60" />
+                  <Ruler className="w-3.5 h-3.5 text-white/70" />
                   Fence Height
                 </span>
-                <span className="text-[10px] text-[#0a1628]/60 bg-[#0f2035] px-2 py-0.5 rounded font-mono">standard size</span>
+                <span className="text-[10px] text-white/70 bg-[#0f2035] px-2 py-0.5 rounded font-mono">standard size</span>
               </div>
               
               <div className="grid grid-cols-5 gap-1.5">
@@ -285,7 +285,7 @@ export default function SidebarControls({
                       className={`text-center py-2.5 rounded-lg font-mono text-xs font-semibold cursor-pointer transition select-none ${
                         isSelected 
                           ? 'bg-[#f97316] text-white border-[#f97316]' 
-                          : 'bg-[#0f2035] text-[#0a1628]/60 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
+                          : 'bg-[#0f2035] text-white/70 border border-white/20 hover:bg-[#0f2035] hover:text-white'
                       }`}
                     >
                       {h}
@@ -294,8 +294,8 @@ export default function SidebarControls({
                   );
                 })}
               </div>
-              <p className="text-[10px] text-[#0a1628]/50 leading-normal gap-1 flex items-start">
-                <Info className="w-3 h-3 text-[#0a1628]/60 shrink-0 mt-0.5" />
+              <p className="text-[10px] text-white/50 leading-normal gap-1 flex items-start">
+                <Info className="w-3 h-3 text-white/70 shrink-0 mt-0.5" />
                 Typical Australian residential boundary fences peak at 1800mm — check your local council requirements. Heights over 1800mm may require DA approvals.
               </p>
             </div>
@@ -305,7 +305,7 @@ export default function SidebarControls({
               <div className="border-t border-[#0a1628]/30 pt-4 flex flex-col gap-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#00aaff] flex items-center gap-1.5 font-sans">
-                    <Sliders className="w-3.5 h-3.5 text-[#0a1628]/60" />
+                    <Sliders className="w-3.5 h-3.5 text-white/70" />
                     Slat Profile Size
                   </span>
                   <span className="text-[9px] bg-[#00aaff]/10 text-[#00aaff] border border-[#00aaff]/20 px-2 py-0.5 rounded font-mono font-bold uppercase">Procedural SVG</span>
@@ -318,7 +318,7 @@ export default function SidebarControls({
                     className={`flex-1 text-center py-2.5 rounded-lg text-xs font-semibold select-none cursor-pointer border transition ${
                       slatProfile === '65'
                         ? 'bg-[#f97316] text-white border-[#f97316] font-bold shadow-md'
-                        : 'bg-[#0f2035] text-[#0a1628]/60 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
+                        : 'bg-[#0f2035] text-white/70 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
                     }`}
                   >
                     65mm Standard
@@ -329,14 +329,14 @@ export default function SidebarControls({
                     className={`flex-1 text-center py-2.5 rounded-lg text-xs font-semibold select-none cursor-pointer border transition ${
                       slatProfile === '90'
                         ? 'bg-[#f97316] text-white border-[#f97316] font-bold shadow-md'
-                        : 'bg-[#0f2035] text-[#0a1628]/60 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
+                        : 'bg-[#0f2035] text-white/70 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
                     }`}
                   >
                     90mm Chunky
                   </button>
                 </div>
                 
-                <div className="bg-[#0f2035] border border-[#0a1628]/30 p-2.5 rounded-lg flex items-start gap-2 text-[10px] text-[#0a1628]/60 leading-relaxed font-sans">
+                <div className="bg-[#0f2035] border border-[#0a1628]/30 p-2.5 rounded-lg flex items-start gap-2 text-[10px] text-white/70 leading-relaxed font-sans">
                   <Info className="w-3.5 h-3.5 shrink-0 text-[#00aaff] mt-0.5" />
                   <span>Choose between sleek 65mm slats with standard spacing or a chunkier 90mm slat profile for a fuller, more substantial boundary aesthetic.</span>
                 </div>
@@ -348,7 +348,7 @@ export default function SidebarControls({
               <div className="border-t border-[#0a1628]/30 pt-4 flex flex-col gap-3">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold uppercase tracking-wider text-[#00aaff] flex items-center gap-1.5 font-sans">
-                    <Sliders className="w-3.5 h-3.5 text-[#0a1628]/60" />
+                    <Sliders className="w-3.5 h-3.5 text-white/70" />
                     Rail Configuration
                   </span>
                   <span className="text-[9px] bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20 px-2 py-0.5 rounded font-mono font-bold uppercase">80mm Post Size</span>
@@ -360,7 +360,7 @@ export default function SidebarControls({
                     className={`flex-1 text-center py-2.5 rounded-lg text-xs font-semibold select-none cursor-pointer border transition ${
                       railCount === 2
                         ? 'bg-[#f97316] text-white border-[#f97316] font-bold shadow-md'
-                        : 'bg-[#0f2035] text-[#0a1628]/60 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
+                        : 'bg-[#0f2035] text-white/70 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
                     }`}
                   >
                     2 Rails Layout
@@ -370,14 +370,14 @@ export default function SidebarControls({
                     className={`flex-1 text-center py-2.5 rounded-lg text-xs font-semibold select-none cursor-pointer border transition ${
                       railCount === 3
                         ? 'bg-[#f97316] text-white border-[#f97316] font-bold shadow-md'
-                        : 'bg-[#0f2035] text-[#0a1628]/60 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
+                        : 'bg-[#0f2035] text-white/70 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
                     }`}
                   >
                     3 Rails Layout
                   </button>
                 </div>
                 
-                <div className="bg-[#0f2035] border border-[#0a1628]/30 p-2.5 rounded-lg flex items-start gap-2 text-[10px] text-[#0a1628]/60 leading-relaxed font-sans">
+                <div className="bg-[#0f2035] border border-[#0a1628]/30 p-2.5 rounded-lg flex items-start gap-2 text-[10px] text-white/70 leading-relaxed font-sans">
                   <Info className="w-3.5 h-3.5 shrink-0 text-[#00aaff] mt-0.5" />
                   <span>Posts are represented as heavy-duty 80mm structural timber posts. Select either the traditional 2-rail design or premium 3-rail layout finish.</span>
                 </div>
@@ -391,7 +391,7 @@ export default function SidebarControls({
           <div className="flex flex-col gap-4">
             <div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#00aaff]">Step 2: Color Suite</h4>
-              <p className="text-xs text-[#0a1628]/60 mt-1">
+              <p className="text-xs text-white/70 mt-1">
                 {material === 'post_and_rail' 
                   ? 'Raw kiln-dried timber finishes' 
                   : 'Australis premium architectural Colorbond colors'}
@@ -428,7 +428,7 @@ export default function SidebarControls({
                   >
                     {/* Circle Color sample */}
                     <div 
-                      className="w-8.5 h-8.5 rounded-full border border-[#0a1628]/30/20 relative flex items-center justify-center font-mono text-[#0a1628]/60 shadow-inner group-hover:scale-105 transition"
+                      className="w-8.5 h-8.5 rounded-full border border-[#0a1628]/30/20 relative flex items-center justify-center font-mono text-white/70 shadow-inner group-hover:scale-105 transition"
                       style={{ backgroundColor: pal.hex }}
                     >
                       {isSelected && (
@@ -450,10 +450,10 @@ export default function SidebarControls({
                 <div className="flex items-center justify-between">
                   <div>
                     <span className="text-xs font-bold text-white block">Post Contrast Colouring</span>
-                    <span className="text-[10px] text-[#0a1628]/50 block">Choose non-matching post finish</span>
+                    <span className="text-[10px] text-white/50 block">Choose non-matching post finish</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[10px] text-[#0a1628]/60 bg-[#0f2035] px-2 py-0.5 rounded font-mono">
+                    <span className="text-[10px] text-white/70 bg-[#0f2035] px-2 py-0.5 rounded font-mono">
                       {postColor.name === color.name ? 'Matching' : 'Contrast'}
                     </span>
                   </div>
@@ -465,7 +465,7 @@ export default function SidebarControls({
                     className={`px-3 py-1.5 rounded-lg text-xs leading-none transition select-none cursor-pointer ${
                       postColor.name === color.name 
                         ? 'bg-[#f97316] text-white font-bold' 
-                        : 'bg-[#0f2035] text-[#0a1628]/60 hover:bg-[#122845] hover:text-white'
+                        : 'bg-[#0f2035] text-white/70 hover:bg-[#122845] hover:text-white'
                     }`}
                   >
                     Match Slat Color
@@ -479,7 +479,7 @@ export default function SidebarControls({
                     className={`px-3 py-1.5 rounded-lg text-xs leading-none transition select-none cursor-pointer ${
                       postColor.name === 'Basalt' 
                         ? 'bg-[#f97316] text-white font-bold' 
-                        : 'bg-[#0f2035] text-[#0a1628]/60 hover:bg-[#122845] hover:text-white'
+                        : 'bg-[#0f2035] text-white/70 hover:bg-[#122845] hover:text-white'
                     }`}
                   >
                     Basalt Contrast Posts
@@ -493,7 +493,7 @@ export default function SidebarControls({
                     className={`px-3 py-1.5 rounded-lg text-xs leading-none transition select-none cursor-pointer ${
                       postColor.name === 'Monument Grey' 
                         ? 'bg-[#f97316] text-white font-bold' 
-                        : 'bg-[#0f2035] text-[#0a1628]/60 hover:bg-[#122845] hover:text-white'
+                        : 'bg-[#0f2035] text-white/70 hover:bg-[#122845] hover:text-white'
                     }`}
                   >
                     Monument Grey Contrast Posts
@@ -504,7 +504,7 @@ export default function SidebarControls({
 
             {/* Selected Color Card */}
             <div className="bg-[#0f2035] p-4 rounded-xl border border-[#0a1628]/30 flex flex-col gap-1.5">
-              <span className="text-[10px] text-[#0a1628]/50 font-bold uppercase tracking-wide">Selected Specification:</span>
+              <span className="text-[10px] text-white/50 font-bold uppercase tracking-wide">Selected Specification:</span>
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 rounded-full border border-black/20" style={{ backgroundColor: color.hex }} />
                 <span className="text-xs font-bold text-white">{color.name}</span>
@@ -514,7 +514,7 @@ export default function SidebarControls({
                   <span className="text-[9px] bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/20 px-1.5 py-0.5 rounded font-bold font-mono">RAW WOOD</span>
                 )}
               </div>
-              <p className="text-[10px] text-[#0a1628]/60 leading-relaxed italic">
+              <p className="text-[10px] text-white/70 leading-relaxed italic">
                 {material === 'post_and_rail' 
                   ? 'Raw premium-grade timber featuring authentic grains. Left untreated for natural silvering or ready for light weather sealing.'
                   : color.desc}
@@ -528,7 +528,7 @@ export default function SidebarControls({
           <div className="flex flex-col gap-4">
             <div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#00aaff]">Step 3: Core Node Properties</h4>
-              <p className="text-xs text-[#0a1628]/60 mt-1">Configure corner braces, posts styles, and yard bounds</p>
+              <p className="text-xs text-white/70 mt-1">Configure corner braces, posts styles, and yard bounds</p>
             </div>
 
             {/* Dynamic visual slider for physical size in meters of frontage */}
@@ -548,7 +548,7 @@ export default function SidebarControls({
                 onChange={(e) => setPropertyFrontage(parseFloat(e.target.value))}
                 className="w-full accent-[#f97316] h-1 bg-[#0f2035] rounded-lg appearance-none cursor-pointer"
               />
-              <span className="text-[9px] text-[#0a1628]/50 leading-none">
+              <span className="text-[9px] text-white/50 leading-none">
                 Adjusts total perimeter meterage to scale quotes down correctly to on-site measurements.
               </span>
             </div>
@@ -562,7 +562,7 @@ export default function SidebarControls({
                 </div>
 
                 <div className="flex flex-col gap-1.5">
-                  <span className="text-[11px] text-[#0a1628]/60 font-semibold">Post Type:</span>
+                  <span className="text-[11px] text-white/70 font-semibold">Post Type:</span>
                   <div className="grid grid-cols-2 gap-1.5">
                     {['standard', 'corner', 'gate', 'H-post', 'decorative'].map((typeOption) => {
                       const currPost = posts.find(p => p.id === selectedPostId);
@@ -576,7 +576,7 @@ export default function SidebarControls({
                           className={`px-2 py-1.5 rounded-lg text-[10px] font-bold capitalize text-center border cursor-pointer select-none transition ${
                             isPostActive
                               ? 'bg-[#f97316] text-white border-[#f97316]'
-                              : 'bg-[#0f2035] text-[#0a1628]/60 border-[#0a1628]/30 hover:bg-[#122845] hover:text-white'
+                              : 'bg-[#0f2035] text-white/70 border-[#0a1628]/30 hover:bg-[#122845] hover:text-white'
                           }`}
                         >
                           {typeOption}
@@ -586,8 +586,8 @@ export default function SidebarControls({
                   </div>
                 </div>
 
-                <p className="text-[10px] text-[#0a1628]/50 leading-normal gap-1 flex items-start mt-1">
-                  <Info className="w-3.5 h-3.5 text-[#0a1628]/60 shrink-0 mt-0.5" />
+                <p className="text-[10px] text-white/50 leading-normal gap-1 flex items-start mt-1">
+                  <Info className="w-3.5 h-3.5 text-white/70 shrink-0 mt-0.5" />
                   Australia fencing guidelines require heavy reinforcing gate pillars or corner brace columns at boundaries to counteract sheet forces.
                 </p>
 
@@ -601,9 +601,9 @@ export default function SidebarControls({
             ) : (
               <div className="border border-dashed border-[#0a1628]/30 rounded-xl p-5 text-center text-white/60 flex flex-col items-center justify-center gap-2">
                 <CircleDot className="w-6.5 h-6.5 text-white/60 animate-pulse" />
-                <span className="text-xs font-semibold text-[#0a1628]/60">Interactive Canvas Inspector</span>
+                <span className="text-xs font-semibold text-white/70">Interactive Canvas Inspector</span>
                 <p className="text-[10px] leading-relaxed max-w-[200px]">
-                  Click on any <b className="text-[#0a1628]/50">circular post handle</b> or <b className="text-[#0a1628]/50">segment panel</b> directly on the house photo to unlock advanced specific tools.
+                  Click on any <b className="text-white/50">circular post handle</b> or <b className="text-white/50">segment panel</b> directly on the house photo to unlock advanced specific tools.
                 </p>
               </div>
             )}
@@ -615,7 +615,7 @@ export default function SidebarControls({
           <div className="flex flex-col gap-5">
             <div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#00aaff]">Step 3: Standalone Gates</h4>
-              <p className="text-xs text-[#0a1628]/60 mt-1">
+              <p className="text-xs text-white/70 mt-1">
                 Drop standalone gates anywhere on the layout, independent of fence segments.
               </p>
             </div>
@@ -762,8 +762,8 @@ export default function SidebarControls({
 
               {/* Dynamic Handlers Info Box */}
               <div className="bg-[#0a1628]/40 p-3.5 rounded-xl border border-[#0a1628]/30 flex flex-col gap-2">
-                <span className="text-[10px] font-bold text-[#0a1628]/60 uppercase tracking-widest leading-none">Automatic Handlers:</span>
-                <ul className="text-[10px] text-[#0a1628]/60 list-disc pl-4 space-y-1 font-sans">
+                <span className="text-[10px] font-bold text-white/70 uppercase tracking-widest leading-none">Automatic Handlers:</span>
+                <ul className="text-[10px] text-white/70 list-disc pl-4 space-y-1 font-sans">
                   <li>
                     <b className="text-white">Height Synchronization:</b> Standalone gates sync automatically with the current selected fence height (<b className="text-[#00aaff]">{height}mm</b>).
                   </li>
@@ -784,7 +784,7 @@ export default function SidebarControls({
           <div className="flex flex-col gap-5">
             <div>
               <h4 className="text-xs font-bold uppercase tracking-wider text-[#00aaff]">Settings & Estimator Rates</h4>
-              <p className="text-xs text-[#0a1628]/60 mt-1">Configure custom rate estimation parameters below.</p>
+              <p className="text-xs text-white/70 mt-1">Configure custom rate estimation parameters below.</p>
             </div>
 
             {/* Boundary Rates Adjustment panel */}
@@ -792,7 +792,7 @@ export default function SidebarControls({
               <div className="flex justify-between items-center border-b border-[#0a1628]/30 pb-2">
                 <div className="flex flex-col">
                   <span className="text-xs font-bold text-white uppercase tracking-wider">Dynamic Estimator Rates</span>
-                  <span className="text-[9px] text-[#0a1628]/50">All prices calculated in Australian Dollars ($)</span>
+                  <span className="text-[9px] text-white/50">All prices calculated in Australian Dollars ($)</span>
                 </div>
                 <button
                   onClick={() => {
@@ -835,7 +835,7 @@ export default function SidebarControls({
                   <div className="grid grid-cols-1 gap-2">
                     {material === 'slat_fencing' ? (
                       <div className="flex flex-col gap-1">
-                        <label className="text-[9px] text-[#0a1628]/60 font-semibold leading-none">Slat Material ($ / meter)</label>
+                        <label className="text-[9px] text-white/70 font-semibold leading-none">Slat Material ($ / meter)</label>
                         <input
                           type="number"
                           value={pricing.slatMaterialCost}
@@ -850,7 +850,7 @@ export default function SidebarControls({
                       </div>
                     ) : material === 'aluminium_blade' ? (
                       <div className="flex flex-col gap-1">
-                        <label className="text-[9px] text-[#0a1628]/60 font-semibold leading-none">Blade Material ($ / meter)</label>
+                        <label className="text-[9px] text-white/70 font-semibold leading-none">Blade Material ($ / meter)</label>
                         <input
                           type="number"
                           value={pricing.bladeMaterialCost}
@@ -865,7 +865,7 @@ export default function SidebarControls({
                       </div>
                     ) : (
                       <div className="flex flex-col gap-1">
-                        <label className="text-[9px] text-[#0a1628]/60 font-semibold leading-none">Post & Rail Material ($ / meter)</label>
+                        <label className="text-[9px] text-white/70 font-semibold leading-none">Post & Rail Material ($ / meter)</label>
                         <input
                           type="number"
                           value={pricing.postRailMaterialCost}
@@ -888,7 +888,7 @@ export default function SidebarControls({
                   <div className="grid grid-cols-1 gap-2">
                     {material === 'slat_fencing' ? (
                       <div className="flex flex-col gap-1">
-                        <label className="text-[9px] text-[#0a1628]/60 font-semibold leading-none">Slat Labour ($ / meter)</label>
+                        <label className="text-[9px] text-white/70 font-semibold leading-none">Slat Labour ($ / meter)</label>
                         <input
                           type="number"
                           value={pricing.slatLaborCost}
@@ -903,7 +903,7 @@ export default function SidebarControls({
                       </div>
                     ) : material === 'aluminium_blade' ? (
                       <div className="flex flex-col gap-1">
-                        <label className="text-[9px] text-[#0a1628]/60 font-semibold leading-none">Blade Labour ($ / meter)</label>
+                        <label className="text-[9px] text-white/70 font-semibold leading-none">Blade Labour ($ / meter)</label>
                         <input
                           type="number"
                           value={pricing.bladeLaborCost}
@@ -918,7 +918,7 @@ export default function SidebarControls({
                       </div>
                     ) : (
                       <div className="flex flex-col gap-1">
-                        <label className="text-[9px] text-[#0a1628]/60 font-semibold leading-none">Post & Rail Labour ($ / meter)</label>
+                        <label className="text-[9px] text-white/70 font-semibold leading-none">Post & Rail Labour ($ / meter)</label>
                         <input
                           type="number"
                           value={pricing.postRailLaborCost}
@@ -940,7 +940,7 @@ export default function SidebarControls({
                   <span className="text-[10px] font-bold text-[#00aaff] uppercase tracking-widest leading-none">Post Upgrades (Pillar)</span>
                   <div className="grid grid-cols-2 gap-2">
                     <div className="flex flex-col gap-1">
-                      <label className="text-[9px] text-[#0a1628]/60 font-semibold leading-none">Corner Post ($)</label>
+                      <label className="text-[9px] text-white/70 font-semibold leading-none">Corner Post ($)</label>
                       <input
                         type="number"
                         value={pricing.cornerPostCost}
@@ -954,7 +954,7 @@ export default function SidebarControls({
                       />
                     </div>
                     <div className="flex flex-col gap-1">
-                      <label className="text-[9px] text-[#0a1628]/60 font-semibold leading-none">H-Post ($)</label>
+                      <label className="text-[9px] text-white/70 font-semibold leading-none">H-Post ($)</label>
                       <input
                         type="number"
                         value={pricing.hPostCost}
@@ -968,7 +968,7 @@ export default function SidebarControls({
                       />
                     </div>
                     <div className="flex flex-col gap-1">
-                      <label className="text-[9px] text-[#0a1628]/60 font-semibold leading-none">Gate Post ($)</label>
+                      <label className="text-[9px] text-white/70 font-semibold leading-none">Gate Post ($)</label>
                       <input
                         type="number"
                         value={pricing.gatePostCost}
@@ -982,7 +982,7 @@ export default function SidebarControls({
                       />
                     </div>
                     <div className="flex flex-col gap-1">
-                      <label className="text-[9px] text-[#0a1628]/60 font-semibold leading-none">Decorative ($)</label>
+                      <label className="text-[9px] text-white/70 font-semibold leading-none">Decorative ($)</label>
                       <input
                         type="number"
                         value={pricing.decorativePostCost}
@@ -1003,7 +1003,7 @@ export default function SidebarControls({
                   <span className="text-[10px] font-bold text-[#00aaff] uppercase tracking-widest leading-none">Gates (Single/Double)</span>
                   <div className="grid grid-cols-2 gap-2">
                     <div className="flex flex-col gap-1">
-                      <label className="text-[9px] text-[#0a1628]/60 font-semibold leading-none">Single Pedestrian ($)</label>
+                      <label className="text-[9px] text-white/70 font-semibold leading-none">Single Pedestrian ($)</label>
                       <input
                         type="number"
                         value={pricing.singleGateCost}
@@ -1017,7 +1017,7 @@ export default function SidebarControls({
                       />
                     </div>
                     <div className="flex flex-col gap-1">
-                      <label className="text-[9px] text-[#0a1628]/60 font-semibold leading-none">Double Swing ($)</label>
+                      <label className="text-[9px] text-white/70 font-semibold leading-none">Double Swing ($)</label>
                       <input
                         type="number"
                         value={pricing.doubleGateCost}
@@ -1034,8 +1034,8 @@ export default function SidebarControls({
                 </div>
 
               </div>
-              <p className="text-[9px] text-[#0a1628]/50 leading-normal gap-1 flex items-start">
-                <Info className="w-3 h-3 text-[#0a1628]/60 shrink-0 mt-0.5" />
+              <p className="text-[9px] text-white/50 leading-normal gap-1 flex items-start">
+                <Info className="w-3 h-3 text-white/70 shrink-0 mt-0.5" />
                 These parameters link directly to live fencer client estimates. Changes instantly modify active and compiled PDF/Quote invoices.
               </p>
             </div>

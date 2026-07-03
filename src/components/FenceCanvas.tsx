@@ -1185,7 +1185,7 @@ export default function FenceCanvas({
       {/* Top action bar */}
       <div className="flex flex-wrap items-center justify-between px-5 py-3.5 bg-[#0f2035] border-b border-[#0a1628]/30 gap-3">
         <div className="flex items-center gap-2">
-          <Layers className="w-4.5 h-4.5 text-[#0a1628]/60" />
+          <Layers className="w-4.5 h-4.5 text-white/70" />
           <h3 className="text-sm font-semibold text-white font-sans">Interactive Design Studio</h3>
           <span className="text-[11px] font-mono bg-[#00aaff]/10 text-[#00aaff] border border-[#00aaff]/20 px-2 py-0.5 rounded-full">
             Full Transparency Enabled
@@ -1198,7 +1198,7 @@ export default function FenceCanvas({
             onClick={() => setPanMode(!panMode)}
             title={panMode ? "Switch to Draw and Drag state" : "Enable camera swipe and pan"}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold cursor-pointer transition ${
-              panMode ? 'bg-[#f97316] text-white font-bold border border-[#f97316]/30' : 'bg-[#122845] text-[#0a1628]/60 hover:text-white'
+              panMode ? 'bg-[#f97316] text-white font-bold border border-[#f97316]/30' : 'bg-[#122845] text-white/70 hover:text-white'
             }`}
           >
             <Hand className="w-3.5 h-3.5" />
@@ -1224,7 +1224,7 @@ export default function FenceCanvas({
             onClick={() => setShowHelperGrid(!showHelperGrid)}
             title="Toggle assistance alignment points"
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium cursor-pointer transition-colors ${
-              showHelperGrid ? 'bg-[#0f2035] text-[#00aaff] border border-[#f97316]/20' : 'bg-[#122845] text-[#0a1628]/60'
+              showHelperGrid ? 'bg-[#0f2035] text-[#00aaff] border border-[#f97316]/20' : 'bg-[#122845] text-white/70'
             }`}
           >
             <Eye className="w-3.5 h-3.5" />
@@ -1412,7 +1412,7 @@ export default function FenceCanvas({
                   <h3 className="text-base font-black mb-2 leading-tight uppercase tracking-wider text-white">
                     Initialize Property Backdrop
                   </h3>
-                  <p className="text-xs text-[#0a1628]/50 mb-6 leading-relaxed">
+                  <p className="text-xs text-white/50 mb-6 leading-relaxed">
                     Upload a high-resolution snapshot of your property boundary to position posts and trace custom framing lines.
                   </p>
                   
@@ -2661,7 +2661,7 @@ export default function FenceCanvas({
                 {/* Floating Tooltip Label */}
                 <div className="absolute bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap bg-[#0f2035] text-white text-[9px] px-1.5 py-0.5 rounded border border-[#0a1628]/40 opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none font-sans flex items-center gap-1 shadow-md">
                   <span className="font-semibold text-[#00aaff] uppercase">{post.type} post</span>
-                  <span className="text-[#0a1628]/60 font-mono">({Math.round(post.x)}%, {Math.round(post.y)}%)</span>
+                  <span className="text-white/70 font-mono">({Math.round(post.x)}%, {Math.round(post.y)}%)</span>
                 </div>
               </div>
             );
@@ -2703,14 +2703,14 @@ export default function FenceCanvas({
               <Paintbrush className="w-4.5 h-4.5 text-[#00aaff] shrink-0" />
               <div className="flex-1">
                 <span className="text-[11px] font-bold text-white uppercase tracking-wider block">Foreground Masking</span>
-                <span className="text-[9px] text-[#0a1628]/60 block leading-tight">Paint over mailboxes, bushes, pillars to bring them forward</span>
+                <span className="text-[9px] text-white/70 block leading-tight">Paint over mailboxes, bushes, pillars to bring them forward</span>
               </div>
             </div>
 
             {/* Brush Size selector slider */}
             <div className="flex flex-col gap-1">
               <div className="flex justify-between items-center text-[10px]">
-                <span className="text-[#0a1628]/60 font-medium">Brush Size</span>
+                <span className="text-white/70 font-medium">Brush Size</span>
                 <span className="font-mono font-bold text-[#00aaff]">{Math.round(brushSize * 4)}px</span>
               </div>
               <input
@@ -2731,7 +2731,7 @@ export default function FenceCanvas({
                 className={`py-1.5 rounded text-center text-[10px] font-bold cursor-pointer transition ${
                   !isBrushEraser 
                     ? 'bg-[#00aaff]/10 border border-[#f97316]/40 text-[#00aaff] font-bold shadow-sm' 
-                    : 'bg-[#0f2035] border border-[#0a1628]/30 text-[#0a1628]/60 hover:text-white'
+                    : 'bg-[#0f2035] border border-[#0a1628]/30 text-white/70 hover:text-white'
                 }`}
               >
                 ● Brush Mask
@@ -2741,7 +2741,7 @@ export default function FenceCanvas({
                 className={`py-1.5 rounded text-center text-[10px] font-bold cursor-pointer transition ${
                   isBrushEraser 
                     ? 'bg-[#f97316]/10 border border-[#f97316]/40 text-[#f97316] font-bold shadow-sm' 
-                    : 'bg-[#0f2035] border border-[#0a1628]/30 text-[#0a1628]/60 hover:text-white'
+                    : 'bg-[#0f2035] border border-[#0a1628]/30 text-white/70 hover:text-white'
                 }`}
               >
                 ○ Erase Mask
@@ -2863,7 +2863,7 @@ export default function FenceCanvas({
               </div>
               <button
                 onClick={() => setIsShiftResizeMinimized(true)}
-                className="text-[9px] text-[#0a1628]/50 hover:text-[#00aaff] transition cursor-pointer font-bold shrink-0 uppercase"
+                className="text-[9px] text-white/50 hover:text-[#00aaff] transition cursor-pointer font-bold shrink-0 uppercase"
                 title="Collapse Panel"
               >
                 Hide
@@ -2935,7 +2935,7 @@ export default function FenceCanvas({
               title="Expand selected post customizer"
             >
               <span className="font-bold text-[#00aaff]">Post Upgrade</span>
-              <span className="text-[9px] text-[#0a1628]/50 uppercase font-semibold">[+]</span>
+              <span className="text-[9px] text-white/50 uppercase font-semibold">[+]</span>
             </button>
           ) : (
             <div
@@ -2954,14 +2954,14 @@ export default function FenceCanvas({
                 <span className="text-[10px] font-bold text-[#00aaff] uppercase tracking-wider">Post Upgrade</span>
                 <button
                   onClick={() => setIsPostCustomizerMinimized(true)}
-                  className="text-[9px] text-[#0a1628]/50 hover:text-[#00aaff] transition cursor-pointer font-bold uppercase shrink-0"
+                  className="text-[9px] text-white/50 hover:text-[#00aaff] transition cursor-pointer font-bold uppercase shrink-0"
                   title="Minimize"
                 >
                   Hide
                 </button>
               </div>
               <div className="flex flex-col gap-0.5">
-                <label className="text-[9px] text-[#0a1628]/60 uppercase tracking-widest leading-none mb-0.5">Style:</label>
+                <label className="text-[9px] text-white/70 uppercase tracking-widest leading-none mb-0.5">Style:</label>
                 <select
                   value={posts.find(p => p.id === selectedPostId)?.type || 'standard'}
                   onChange={(e) => {
@@ -3026,7 +3026,7 @@ export default function FenceCanvas({
               title="Expand segment customizer"
             >
               <span className="font-bold text-[#00aaff]">Segment Settings</span>
-              <span className="text-[9px] text-[#0a1628]/50 uppercase font-semibold">[+]</span>
+              <span className="text-[9px] text-white/50 uppercase font-semibold">[+]</span>
             </button>
           ) : (
             <div
@@ -3054,7 +3054,7 @@ export default function FenceCanvas({
               
               {/* Split segment to add new intermediate post */}
               <div className="flex flex-col gap-0.5">
-                <span className="text-[8px] text-[#0a1628]/60 uppercase tracking-widest leading-none mb-0.5">Node:</span>
+                <span className="text-[8px] text-white/70 uppercase tracking-widest leading-none mb-0.5">Node:</span>
                 <button
                   onClick={() => {
                     const seg = segments.find(s => s.id === selectedSegmentId);
@@ -3063,7 +3063,7 @@ export default function FenceCanvas({
                   className="w-full text-left bg-[#0f2035] hover:bg-[#122845] text-white text-[10px] px-1.5 py-1 rounded border border-[#0a1628]/40 transition flex items-center justify-between cursor-pointer"
                 >
                   <span className="flex items-center gap-1"><Plus className="w-2.5 h-2.5 text-[#00aaff]" /> Split Center</span>
-                  <span className="text-[8px] font-mono text-[#0a1628]/50 uppercase leading-none">Add</span>
+                  <span className="text-[8px] font-mono text-white/50 uppercase leading-none">Add</span>
                 </button>
               </div>
 
@@ -3093,7 +3093,7 @@ export default function FenceCanvas({
                   <div className="flex flex-col gap-1.5 mt-0.5 pt-1 pb-0.5 bg-[#0f2035] px-1.5 rounded border border-[#0a1628]/30">
                     {/* Gate Type Selector */}
                     <div className="flex flex-col gap-0.5">
-                      <span className="text-[8px] text-[#0a1628]/60 uppercase tracking-wider mb-0.5">Gate Type:</span>
+                      <span className="text-[8px] text-white/70 uppercase tracking-wider mb-0.5">Gate Type:</span>
                       <div className="grid grid-cols-2 gap-1 bg-[#0d1b2e] p-0.5 rounded border border-[#0a1628]/30">
                         <button
                           type="button"
@@ -3103,7 +3103,7 @@ export default function FenceCanvas({
                           className={`py-0.5 rounded text-[8.5px] font-medium transition cursor-pointer text-center ${
                             (segments.find(s => s.id === selectedSegmentId)?.gateType !== 'double')
                               ? 'bg-[#00aaff]/15 text-[#00aaff] border border-[#00aaff]/30'
-                              : 'text-[#0a1628]/60 hover:text-white border border-transparent'
+                              : 'text-white/70 hover:text-white border border-transparent'
                           }`}
                         >
                           Single (1.2m)
@@ -3116,7 +3116,7 @@ export default function FenceCanvas({
                           className={`py-0.5 rounded text-[8.5px] font-medium transition cursor-pointer text-center ${
                             (segments.find(s => s.id === selectedSegmentId)?.gateType === 'double')
                               ? 'bg-[#00aaff]/15 text-[#00aaff] border border-[#00aaff]/30'
-                              : 'text-[#0a1628]/60 hover:text-white border border-transparent'
+                              : 'text-white/70 hover:text-white border border-transparent'
                           }`}
                         >
                           Double (4.0m)
@@ -3126,7 +3126,7 @@ export default function FenceCanvas({
 
                     {/* Gate Width Display */}
                     <div className="flex flex-col gap-0.5">
-                      <div className="flex justify-between items-center text-[8px] text-[#0a1628]/60 leading-none">
+                      <div className="flex justify-between items-center text-[8px] text-white/70 leading-none">
                         <span>Width:</span>
                         <span className="font-mono text-[#00aaff] text-[9px] font-bold">
                           {segments.find(s => s.id === selectedSegmentId)?.gateType === 'double' ? '4.0m' : '1.2m'} (Locked)
@@ -3136,7 +3136,7 @@ export default function FenceCanvas({
 
                     {/* Gate Positioning along segment line */}
                     <div className="flex flex-col gap-0.5">
-                      <div className="flex justify-between items-center text-[8px] text-[#0a1628]/60 leading-none">
+                      <div className="flex justify-between items-center text-[8px] text-white/70 leading-none">
                         <span>Pos:</span>
                         <span className="font-mono text-white text-[9px] font-bold">{(segments.find(s => s.id === selectedSegmentId)?.gatePositionPercent || 40)}%</span>
                       </div>
@@ -3231,7 +3231,7 @@ export default function FenceCanvas({
             </div>
             <button
               onClick={dismissTipBanner}
-              className="text-[#0a1628]/50 hover:text-white transition font-mono text-[9px] uppercase font-bold pl-1.5 cursor-pointer"
+              className="text-white/50 hover:text-white transition font-mono text-[9px] uppercase font-bold pl-1.5 cursor-pointer"
               title="Dismiss instruction"
             >
               [X]

@@ -206,7 +206,7 @@ export default function App() {
             </div>
             
             <div className="border border-[#0a1628]/30 bg-[#0d1b2e] px-3 py-1 mt-4 rounded-full">
-              <span className="text-[9px] font-bold text-[#0a1628]/60 tracking-[0.18em] uppercase">
+              <span className="text-[9px] font-bold text-white/70 tracking-[0.18em] uppercase">
                 PORTAL ACCESS
               </span>
             </div>
@@ -215,7 +215,7 @@ export default function App() {
           {/* Form section */}
           <form onSubmit={handleLogin} className="p-8 flex flex-col gap-5">
             <div className="flex flex-col gap-1.5">
-              <label className="text-[10px] font-bold text-[#0a1628]/60 uppercase tracking-widest leading-none">
+              <label className="text-[10px] font-bold text-white/70 uppercase tracking-widest leading-none">
                 Enterprise Password
               </label>
               <div className="relative mt-1">
@@ -228,17 +228,17 @@ export default function App() {
                   autoFocus
                   required
                 />
-                <Lock className="w-3.5 h-3.5 text-[#0a1628]/50 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Lock className="w-3.5 h-3.5 text-white/50 absolute left-3.5 top-1/2 -translate-y-1/2" />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 h-7 w-7 bg-[#212327] hover:bg-[#2e3137] border border-[#0a1628]/40/50 hover:border-[#0a1628]/30 rounded-lg flex items-center justify-center text-[#0a1628]/60 hover:text-white transition-all shadow-sm focus:outline-none"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 h-7 w-7 bg-[#212327] hover:bg-[#2e3137] border border-[#0a1628]/40/50 hover:border-[#0a1628]/30 rounded-lg flex items-center justify-center text-white/70 hover:text-white transition-all shadow-sm focus:outline-none"
                   title={showPassword ? "Hide password" : "Show password"}
                 >
                   {showPassword ? (
                     <EyeOff className="w-3.5 h-3.5 text-[#f97316]" />
                   ) : (
-                    <Eye className="w-3.5 h-3.5 text-[#0a1628]/60" />
+                    <Eye className="w-3.5 h-3.5 text-white/70" />
                   )}
                 </button>
               </div>
@@ -261,7 +261,7 @@ export default function App() {
                   onChange={(e) => setRememberMe(e.target.checked)}
                   className="w-3.5 h-3.5 accent-[#f97316] bg-[#0f2035] border-[#0a1628]/40 rounded cursor-pointer"
                 />
-                <span className="text-[11px] text-[#0a1628]/60 font-sans">Remember login on this device</span>
+                <span className="text-[11px] text-white/70 font-sans">Remember login on this device</span>
               </label>
             </div>
 
@@ -276,14 +276,14 @@ export default function App() {
           </form>
 
           {/* Verification check lines */}
-          <div className="bg-[#0a1628] border-t border-[#0a1628]/30 py-3.5 px-6 flex items-center justify-between text-[10px] text-[#0a1628]/50 font-mono">
+          <div className="bg-[#0a1628] border-t border-[#0a1628]/30 py-3.5 px-6 flex items-center justify-between text-[10px] text-white/50 font-mono">
             <span>{CLIENT_CONFIG.footerSecurityText}</span>
             <span>{CLIENT_CONFIG.footerSystemText}</span>
           </div>
         </div>
 
         {/* Legal copyright footer */}
-        <div className="text-[11px] font-mono text-[#0a1628]/50 text-center mt-6 tracking-wide select-none z-10 max-w-sm leading-relaxed">
+        <div className="text-[11px] font-mono text-white/50 text-center mt-6 tracking-wide select-none z-10 max-w-sm leading-relaxed">
           {CLIENT_CONFIG.loginFooterText}
         </div>
       </div>
@@ -313,8 +313,8 @@ export default function App() {
           </div>
 
           {/* Corporate License & Identity details in the middle */}
-          <div className="hidden xl:flex flex-col items-start gap-0.5 text-[#0a1628]/60 font-sans px-4 shrink">
-            <div className="flex items-center gap-1.5 text-[10px] font-bold text-[#0a1628]/50 uppercase tracking-widest leading-none">
+          <div className="hidden xl:flex flex-col items-start gap-0.5 text-white/70 font-sans px-4 shrink">
+            <div className="flex items-center gap-1.5 text-[10px] font-bold text-white/50 uppercase tracking-widest leading-none">
               <span>{CLIENT_CONFIG.companyTagline.split(' · ')[0]}</span>
               <span className="text-white/60">&#8226;</span>
               <span className="text-[#00aaff] font-bold">{CLIENT_CONFIG.companyTagline.split(' · ')[1]}</span>
@@ -325,11 +325,11 @@ export default function App() {
           </div>
 
           {/* Multi-info indicators */}
-          <div className="hidden 2xl:flex items-center gap-6 text-xs text-[#0a1628]/60 pl-4 border-l border-[#0a1628]/30 shrink">
+          <div className="hidden 2xl:flex items-center gap-6 text-xs text-white/70 pl-4 border-l border-[#0a1628]/30 shrink">
             <div className="flex items-center gap-1.5 pr-4 py-1">
               <MapPin className="w-4 h-4 text-[#f97316] shrink-0" />
               <div className="flex flex-col">
-                <span className="text-[9px] text-[#0a1628]/50 font-bold uppercase leading-none">Market Level</span>
+                <span className="text-[9px] text-white/50 font-bold uppercase leading-none">Market Level</span>
                 <span className="text-white text-[11px] font-semibold mt-0.5">{CLIENT_CONFIG.marketRegion}</span>
               </div>
             </div>
@@ -337,7 +337,7 @@ export default function App() {
             <div className="flex items-center gap-1.5 pr-4 py-1 border-l border-[#0a1628]/30 pl-4">
               <Clock className="w-4 h-4 text-[#f97316] shrink-0" />
               <div className="flex flex-col">
-                <span className="text-[9px] text-[#0a1628]/50 font-bold uppercase leading-none">Fencing Standards</span>
+                <span className="text-[9px] text-white/50 font-bold uppercase leading-none">Fencing Standards</span>
                 <span className="text-white text-[11px] font-semibold mt-0.5">{CLIENT_CONFIG.fencingStandard}</span>
               </div>
             </div>
@@ -459,7 +459,7 @@ export default function App() {
           {!isLeftPanelOpen && !isFullScreen && (
             <button
               onClick={() => setIsLeftPanelOpen(true)}
-              className="absolute left-6 top-1/2 -translate-y-1/2 bg-[#f97316] hover:bg-[#f97316] text-[#141517] w-8 h-20 rounded-r-xl flex flex-col items-center justify-center shadow-2xl z-40 transition-all group border-l border-[#f97316]/30 cursor-pointer"
+              className="absolute left-6 top-1/2 -translate-y-1/2 bg-[#f97316] hover:bg-[#f97316] text-white w-8 h-20 rounded-r-xl flex flex-col items-center justify-center shadow-2xl z-40 transition-all group border-l border-[#f97316]/30 cursor-pointer"
               title="Expand Design Controls Panel"
             >
               <ChevronRight className="w-5 h-5 animate-bounce" />
@@ -470,7 +470,7 @@ export default function App() {
           {!isRightPanelOpen && !isFullScreen && (
             <button
               onClick={() => setIsRightPanelOpen(true)}
-              className="absolute right-6 top-1/2 -translate-y-1/2 bg-[#f97316] hover:bg-[#f97316] text-[#141517] w-8 h-20 rounded-l-xl flex flex-col items-center justify-center shadow-2xl z-40 transition-all group border-r border-[#0a1628]/30 cursor-pointer"
+              className="absolute right-6 top-1/2 -translate-y-1/2 bg-[#f97316] hover:bg-[#f97316] text-white w-8 h-20 rounded-l-xl flex flex-col items-center justify-center shadow-2xl z-40 transition-all group border-r border-[#0a1628]/30 cursor-pointer"
               title="Expand Price Estimate Panel"
             >
               <ChevronLeft className="w-5 h-5 animate-bounce" />
@@ -539,7 +539,7 @@ export default function App() {
               <span className="text-xs font-bold text-white uppercase tracking-wider">{CLIENT_CONFIG.companyName} Companion Guide</span>
               <button 
                 onClick={() => setShowTutorial(false)}
-                className="text-[#0a1628]/50 hover:text-white transition cursor-pointer"
+                className="text-white/50 hover:text-white transition cursor-pointer"
               >
                 CLOSE [x]
               </button>
@@ -547,35 +547,35 @@ export default function App() {
 
             <div className="p-6 overflow-y-auto flex flex-col gap-5 leading-relaxed text-white/70 font-sans">
               <h3 className="text-sm font-extrabold text-[#f97316] uppercase tracking-widest leading-none">Interactive Visual Boundary Controls</h3>
-              <p className="text-xs text-[#0a1628]/60">
+              <p className="text-xs text-white/70">
                 This simulator is designed to give {CLIENT_CONFIG.companyName} consultants and their respected clients a professional edge by overlaying highly accurate, responsive boundary design mockups onto residential properties.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-1">
                 <div className="bg-[#0f2035] p-4.5 rounded-xl border border-[#0a1628]/30">
                   <span className="text-xs font-bold text-white block mb-1">📌 Drag Anchor Handles</span>
-                  <p className="text-[11px] text-[#0a1628]/60 leading-normal">
+                  <p className="text-[11px] text-white/70 leading-normal">
                     Drag the circular anchors overlaying the grass to stretch and fit the fence directly along lawn contours. It calculates matching spatial spacing and physical structural lengths.
                   </p>
                 </div>
                 
                 <div className="bg-[#0f2035] p-4.5 rounded-xl border border-[#0a1628]/30">
                   <span className="text-xs font-bold text-white block mb-1">🎨 Premium Colors Palette</span>
-                  <p className="text-[11px] text-[#0a1628]/60 leading-normal">
+                  <p className="text-[11px] text-white/70 leading-normal">
                     Select between Monument, Surfmist, Basalt, or Hardwood Woodgrains. Contrast colors by assigning separate finishes to vertical posts and horizontal slats.
                   </p>
                 </div>
 
                 <div className="bg-[#0f2035] p-4.5 rounded-xl border border-[#0a1628]/30">
                   <span className="text-xs font-bold text-white block mb-1">🗒 Interactive Post & Slat Editors</span>
-                  <p className="text-[11px] text-[#0a1628]/60 leading-normal">
+                  <p className="text-[11px] text-white/70 leading-normal">
                     Click any post directly on canvas to upgrade to standard, corner, H-post, gate support, or decorative columns. Click any fence segment to mount gates and slide their width.
                   </p>
                 </div>
 
                 <div className="bg-[#0f2035] p-4.5 rounded-xl border border-[#0a1628]/30">
                   <span className="text-xs font-bold text-white block mb-1">📸 Client Photo Overlay</span>
-                  <p className="text-[11px] text-[#0a1628]/60 leading-normal">
+                  <p className="text-[11px] text-white/70 leading-normal">
                     Snap a photo of the client's property, upload it directly with the <strong>Upload Photo</strong> button on the canvas, and trace the mockup on their real home grounds!
                   </p>
                 </div>
