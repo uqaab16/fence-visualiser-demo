@@ -123,7 +123,7 @@ export default function SidebarControls({
               className={`flex flex-col items-center gap-1.5 py-3 rounded-xl transition cursor-pointer select-none ${
                 activeTab === 'material' 
                   ? 'bg-[#0f2035] text-[#00aaff] border border-[#0a1628]/30 shadow-md' 
-                  : 'text-[#0a1628]/50 hover:text-zinc-300 hover:bg-[#18191c]/50'
+                  : 'text-[#0a1628]/50 hover:text-white/70 hover:bg-[#0f2035]/50'
               }`}
             >
               <Fence className="w-5 h-5" />
@@ -136,7 +136,7 @@ export default function SidebarControls({
               className={`flex flex-col items-center gap-1.5 py-3 rounded-xl transition cursor-pointer select-none ${
                 activeTab === 'color' 
                   ? 'bg-[#0f2035] text-[#00aaff] border border-[#0a1628]/30 shadow-md' 
-                  : 'text-[#0a1628]/50 hover:text-zinc-300 hover:bg-[#18191c]/50'
+                  : 'text-[#0a1628]/50 hover:text-white/70 hover:bg-[#0f2035]/50'
               }`}
             >
               <Palette className="w-5 h-5" />
@@ -149,7 +149,7 @@ export default function SidebarControls({
               className={`flex flex-col items-center gap-1.5 py-3 rounded-xl transition cursor-pointer select-none ${
                 activeTab === 'posts' 
                   ? 'bg-[#0f2035] text-[#00aaff] border border-[#0a1628]/30 shadow-md' 
-                  : 'text-[#0a1628]/50 hover:text-zinc-300 hover:bg-[#18191c]/50'
+                  : 'text-[#0a1628]/50 hover:text-white/70 hover:bg-[#0f2035]/50'
               }`}
             >
               <Columns3 className="w-5 h-5" />
@@ -162,7 +162,7 @@ export default function SidebarControls({
               className={`flex flex-col items-center gap-1.5 py-3 rounded-xl transition cursor-pointer select-none ${
                 activeTab === 'gates' 
                   ? 'bg-[#0f2035] text-[#00aaff] border border-[#0a1628]/30 shadow-md' 
-                  : 'text-[#0a1628]/50 hover:text-zinc-300 hover:bg-[#18191c]/50'
+                  : 'text-[#0a1628]/50 hover:text-white/70 hover:bg-[#0f2035]/50'
               }`}
             >
               <DoorClosed className="w-5 h-5" />
@@ -184,7 +184,7 @@ export default function SidebarControls({
             className={`flex flex-col items-center gap-1.5 py-2.5 w-14 rounded-xl transition cursor-pointer select-none mb-3 ${
               activeTab === 'settings' 
                 ? 'bg-[#0f2035] text-[#00aaff] border border-[#0a1628]/30 shadow-md' 
-                : 'text-[#0a1628]/50 hover:text-zinc-300 hover:bg-[#18191c]/50'
+                : 'text-[#0a1628]/50 hover:text-white/70 hover:bg-[#0f2035]/50'
             }`}
           >
             <Settings className="w-[18px] h-[18px]" />
@@ -194,14 +194,14 @@ export default function SidebarControls({
           {setIsLeftPanelOpen && (
             <button
               onClick={() => setIsLeftPanelOpen(false)}
-              className="flex flex-col items-center gap-1 py-2 w-12 hover:bg-[#18191c]/40 text-[#0a1628]/50 hover:text-white rounded-xl transition cursor-pointer mb-3.5"
+              className="flex flex-col items-center gap-1 py-2 w-12 hover:bg-[#0f2035]/40 text-[#0a1628]/50 hover:text-white rounded-xl transition cursor-pointer mb-3.5"
               title="Collapse Design Panel"
             >
               <ChevronLeft className="w-4 h-4 text-[#0a1628]/60" />
               <span className="text-[9px] font-bold uppercase tracking-widest text-center mt-0.5">Close</span>
             </button>
           )}
-          <div className="text-zinc-600 text-center text-[9px] font-mono leading-tight px-1 pb-2">
+          <div className="text-white/60 text-center text-[9px] font-mono leading-tight px-1 pb-2">
             v1.4 <span className="uppercase">{CLIENT_CONFIG.companyName.split(' ')[1]}</span><br />{CLIENT_CONFIG.regionCity}
           </div>
         </div>
@@ -230,12 +230,12 @@ export default function SidebarControls({
                     className={`w-full text-left p-3.5 rounded-xl border transition-all duration-200 cursor-pointer flex gap-3.5 relative overflow-hidden group select-none ${
                       isSelected 
                         ? 'bg-[#112540] border-[#f97316]/50 shadow-[0_4px_12px_rgba(20,184,166,0.1)]' 
-                        : 'bg-[#18191c]/80 border-[#0a1628]/30 hover:bg-[#18191c] hover:border-[#0a1628]/40'
+                        : 'bg-[#0f2035]/80 border-[#0a1628]/30 hover:bg-[#0f2035] hover:border-[#0a1628]/40'
                     }`}
                   >
                     {/* Tiny micro graphic sample block */}
                     <div 
-                      className="w-11 h-11 rounded-lg shrink-0 border border-zinc-950/40 opacity-90 group-hover:opacity-100 flex items-center justify-center text-center overflow-hidden"
+                      className="w-11 h-11 rounded-lg shrink-0 border border-[#0a1628]/30/40 opacity-90 group-hover:opacity-100 flex items-center justify-center text-center overflow-hidden"
                       style={{ background: card.visual }}
                     />
 
@@ -285,7 +285,7 @@ export default function SidebarControls({
                       className={`text-center py-2.5 rounded-lg font-mono text-xs font-semibold cursor-pointer transition select-none ${
                         isSelected 
                           ? 'bg-[#f97316] text-white border-[#f97316]' 
-                          : 'bg-[#18191c] text-[#0a1628]/60 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
+                          : 'bg-[#0f2035] text-[#0a1628]/60 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
                       }`}
                     >
                       {h}
@@ -318,7 +318,7 @@ export default function SidebarControls({
                     className={`flex-1 text-center py-2.5 rounded-lg text-xs font-semibold select-none cursor-pointer border transition ${
                       slatProfile === '65'
                         ? 'bg-[#f97316] text-white border-[#f97316] font-bold shadow-md'
-                        : 'bg-[#18191c] text-[#0a1628]/60 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
+                        : 'bg-[#0f2035] text-[#0a1628]/60 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
                     }`}
                   >
                     65mm Standard
@@ -329,14 +329,14 @@ export default function SidebarControls({
                     className={`flex-1 text-center py-2.5 rounded-lg text-xs font-semibold select-none cursor-pointer border transition ${
                       slatProfile === '90'
                         ? 'bg-[#f97316] text-white border-[#f97316] font-bold shadow-md'
-                        : 'bg-[#18191c] text-[#0a1628]/60 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
+                        : 'bg-[#0f2035] text-[#0a1628]/60 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
                     }`}
                   >
                     90mm Chunky
                   </button>
                 </div>
                 
-                <div className="bg-[#18191c] border border-[#0a1628]/30 p-2.5 rounded-lg flex items-start gap-2 text-[10px] text-[#0a1628]/60 leading-relaxed font-sans">
+                <div className="bg-[#0f2035] border border-[#0a1628]/30 p-2.5 rounded-lg flex items-start gap-2 text-[10px] text-[#0a1628]/60 leading-relaxed font-sans">
                   <Info className="w-3.5 h-3.5 shrink-0 text-[#00aaff] mt-0.5" />
                   <span>Choose between sleek 65mm slats with standard spacing or a chunkier 90mm slat profile for a fuller, more substantial boundary aesthetic.</span>
                 </div>
@@ -360,7 +360,7 @@ export default function SidebarControls({
                     className={`flex-1 text-center py-2.5 rounded-lg text-xs font-semibold select-none cursor-pointer border transition ${
                       railCount === 2
                         ? 'bg-[#f97316] text-white border-[#f97316] font-bold shadow-md'
-                        : 'bg-[#18191c] text-[#0a1628]/60 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
+                        : 'bg-[#0f2035] text-[#0a1628]/60 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
                     }`}
                   >
                     2 Rails Layout
@@ -370,14 +370,14 @@ export default function SidebarControls({
                     className={`flex-1 text-center py-2.5 rounded-lg text-xs font-semibold select-none cursor-pointer border transition ${
                       railCount === 3
                         ? 'bg-[#f97316] text-white border-[#f97316] font-bold shadow-md'
-                        : 'bg-[#18191c] text-[#0a1628]/60 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
+                        : 'bg-[#0f2035] text-[#0a1628]/60 border border-[#0a1628]/30 hover:bg-[#0f2035] hover:text-white'
                     }`}
                   >
                     3 Rails Layout
                   </button>
                 </div>
                 
-                <div className="bg-[#18191c] border border-[#0a1628]/30 p-2.5 rounded-lg flex items-start gap-2 text-[10px] text-[#0a1628]/60 leading-relaxed font-sans">
+                <div className="bg-[#0f2035] border border-[#0a1628]/30 p-2.5 rounded-lg flex items-start gap-2 text-[10px] text-[#0a1628]/60 leading-relaxed font-sans">
                   <Info className="w-3.5 h-3.5 shrink-0 text-[#00aaff] mt-0.5" />
                   <span>Posts are represented as heavy-duty 80mm structural timber posts. Select either the traditional 2-rail design or premium 3-rail layout finish.</span>
                 </div>
@@ -423,12 +423,12 @@ export default function SidebarControls({
                     } ${
                       isSelected 
                         ? 'bg-[#112540] border-[#f97316]/60 shadow-md' 
-                        : 'bg-[#18191c]/60 border-transparent hover:bg-[#18191c] hover:border-[#0a1628]/40'
+                        : 'bg-[#0f2035]/60 border-transparent hover:bg-[#0f2035] hover:border-[#0a1628]/40'
                     }`}
                   >
                     {/* Circle Color sample */}
                     <div 
-                      className="w-8.5 h-8.5 rounded-full border border-zinc-950/20 relative flex items-center justify-center font-mono text-[#0a1628]/60 shadow-inner group-hover:scale-105 transition"
+                      className="w-8.5 h-8.5 rounded-full border border-[#0a1628]/30/20 relative flex items-center justify-center font-mono text-[#0a1628]/60 shadow-inner group-hover:scale-105 transition"
                       style={{ backgroundColor: pal.hex }}
                     >
                       {isSelected && (
@@ -436,7 +436,7 @@ export default function SidebarControls({
                       )}
                     </div>
                     {/* Swatch Name */}
-                    <span className="text-[9px] text-zinc-300 font-semibold leading-tight text-center tracking-tight truncate w-full">
+                    <span className="text-[9px] text-white/70 font-semibold leading-tight text-center tracking-tight truncate w-full">
                       {pal.name}
                     </span>
                   </button>
@@ -459,7 +459,7 @@ export default function SidebarControls({
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-1.5 bg-[#18191c] p-2 rounded-xl border border-[#0a1628]/30">
+                <div className="flex flex-wrap gap-1.5 bg-[#0f2035] p-2 rounded-xl border border-[#0a1628]/30">
                   <button
                     onClick={() => setPostColor(color)}
                     className={`px-3 py-1.5 rounded-lg text-xs leading-none transition select-none cursor-pointer ${
@@ -503,7 +503,7 @@ export default function SidebarControls({
             )}
 
             {/* Selected Color Card */}
-            <div className="bg-[#18191c] p-4 rounded-xl border border-[#0a1628]/30 flex flex-col gap-1.5">
+            <div className="bg-[#0f2035] p-4 rounded-xl border border-[#0a1628]/30 flex flex-col gap-1.5">
               <span className="text-[10px] text-[#0a1628]/50 font-bold uppercase tracking-wide">Selected Specification:</span>
               <div className="flex items-center gap-2">
                 <div className="w-5 h-5 rounded-full border border-black/20" style={{ backgroundColor: color.hex }} />
@@ -532,7 +532,7 @@ export default function SidebarControls({
             </div>
 
             {/* Dynamic visual slider for physical size in meters of frontage */}
-            <div className="bg-[#18191c] p-4 rounded-xl border border-[#0a1628]/30 flex flex-col gap-3">
+            <div className="bg-[#0f2035] p-4 rounded-xl border border-[#0a1628]/30 flex flex-col gap-3">
               <div className="flex justify-between items-center">
                 <span className="text-xs font-bold text-white">Full Property Frontage</span>
                 <span className="text-xs font-mono font-bold text-[#00aaff] bg-[#00aaff]/10 border border-[#00aaff]/20 px-2 py-0.5 rounded">
@@ -576,7 +576,7 @@ export default function SidebarControls({
                           className={`px-2 py-1.5 rounded-lg text-[10px] font-bold capitalize text-center border cursor-pointer select-none transition ${
                             isPostActive
                               ? 'bg-[#f97316] text-white border-[#f97316]'
-                              : 'bg-[#0f2035] text-[#0a1628]/60 border-zinc-750 hover:bg-zinc-750 hover:text-white'
+                              : 'bg-[#0f2035] text-[#0a1628]/60 border-[#0a1628]/30 hover:bg-[#122845] hover:text-white'
                           }`}
                         >
                           {typeOption}
@@ -593,14 +593,14 @@ export default function SidebarControls({
 
                 <button
                   onClick={() => setSelectedPostId(null)}
-                  className="w-full text-center bg-[#0f2035] text-zinc-300 py-1.5 rounded-lg text-xs leading-none hover:bg-zinc-750 cursor-pointer transition select-none mt-1"
+                  className="w-full text-center bg-[#0f2035] text-white/70 py-1.5 rounded-lg text-xs leading-none hover:bg-[#122845] cursor-pointer transition select-none mt-1"
                 >
                   Unselect Anchor
                 </button>
               </div>
             ) : (
-              <div className="border border-dashed border-zinc-805 rounded-xl p-5 text-center text-zinc-600 flex flex-col items-center justify-center gap-2">
-                <CircleDot className="w-6.5 h-6.5 text-zinc-700 animate-pulse" />
+              <div className="border border-dashed border-[#0a1628]/30 rounded-xl p-5 text-center text-white/60 flex flex-col items-center justify-center gap-2">
+                <CircleDot className="w-6.5 h-6.5 text-white/60 animate-pulse" />
                 <span className="text-xs font-semibold text-[#0a1628]/60">Interactive Canvas Inspector</span>
                 <p className="text-[10px] leading-relaxed max-w-[200px]">
                   Click on any <b className="text-[#0a1628]/50">circular post handle</b> or <b className="text-[#0a1628]/50">segment panel</b> directly on the house photo to unlock advanced specific tools.
@@ -622,7 +622,7 @@ export default function SidebarControls({
 
             <div className="flex flex-col gap-3">
               {/* Single Gate Drop Button */}
-              <div className="bg-[#18191c] p-3.5 rounded-xl border border-[#0a1628]/30 flex flex-col gap-2.5">
+              <div className="bg-[#0f2035] p-3.5 rounded-xl border border-[#0a1628]/30 flex flex-col gap-2.5">
                 <div className="flex flex-col">
                   <span className="text-xs font-bold text-white">Single Pedestrian Gate</span>
                   <span className="text-[10px] text-[#00aaff] font-mono font-semibold">Strictly locked at 1200mm width</span>
@@ -691,7 +691,7 @@ export default function SidebarControls({
               </div>
 
               {/* Double Gate Drop Button */}
-              <div className="bg-[#18191c] p-3.5 rounded-xl border border-[#0a1628]/30 flex flex-col gap-2.5">
+              <div className="bg-[#0f2035] p-3.5 rounded-xl border border-[#0a1628]/30 flex flex-col gap-2.5">
                 <div className="flex flex-col">
                   <span className="text-xs font-bold text-white">Double Driveway Swing Gate</span>
                   <span className="text-[10px] text-[#00aaff] font-mono font-semibold">Strictly locked at 4000mm width</span>
@@ -788,8 +788,8 @@ export default function SidebarControls({
             </div>
 
             {/* Boundary Rates Adjustment panel */}
-            <div className="p-4 rounded-xl border flex flex-col gap-4.5 bg-[#18191c] border-[#0a1628]/30">
-              <div className="flex justify-between items-center border-b border-zinc-850 pb-2">
+            <div className="p-4 rounded-xl border flex flex-col gap-4.5 bg-[#0f2035] border-[#0a1628]/30">
+              <div className="flex justify-between items-center border-b border-[#0a1628]/30 pb-2">
                 <div className="flex flex-col">
                   <span className="text-xs font-bold text-white uppercase tracking-wider">Dynamic Estimator Rates</span>
                   <span className="text-[9px] text-[#0a1628]/50">All prices calculated in Australian Dollars ($)</span>

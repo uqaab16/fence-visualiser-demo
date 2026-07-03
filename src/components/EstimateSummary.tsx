@@ -369,7 +369,7 @@ export default function EstimateSummary({
   };
 
   return (
-    <div className="flex flex-col w-80 sm:w-92 shrink-0 p-5.5 h-full overflow-y-auto gap-4 relative z-20 bg-[#0f2035] text-zinc-100 border-l border-[#0a1628]/30">
+    <div className="flex flex-col w-80 sm:w-92 shrink-0 p-5.5 h-full overflow-y-auto gap-4 relative z-20 bg-[#0f2035] text-white border-l border-[#0a1628]/30">
       
       {/* Title block */}
       <div className="flex items-center justify-between">
@@ -384,7 +384,7 @@ export default function EstimateSummary({
           {setIsRightPanelOpen && (
             <button
               onClick={() => setIsRightPanelOpen(false)}
-              className="p-1 hover:bg-[#0f2035] text-[#0a1628]/50 hover:text-zinc-300 rounded transition cursor-pointer"
+              className="p-1 hover:bg-[#0f2035] text-[#0a1628]/50 hover:text-white/70 rounded transition cursor-pointer"
               title="Collapse estimate panel"
             >
               <X className="w-3.5 h-3.5" />
@@ -394,7 +394,7 @@ export default function EstimateSummary({
       </div>
 
       {/* Basic configurations line summary */}
-      <div className="bg-[#18191c] p-3.5 rounded-xl border border-[#0a1628]/30 flex flex-col gap-2">
+      <div className="bg-[#0f2035] p-3.5 rounded-xl border border-[#0a1628]/30 flex flex-col gap-2">
         <div className="flex justify-between items-center border-b border-[#0a1628]/30 pb-2">
           <div className="flex flex-col">
             <span className="text-xs font-bold text-white tracking-tight">{FENCE_PRICES[material].label}</span>
@@ -405,12 +405,12 @@ export default function EstimateSummary({
 
         <div className="flex justify-between text-[11px] text-[#0a1628]/60">
           <span>Boundary Posts:</span>
-          <span className="font-mono text-zinc-300 font-semibold">{estimate.postCount} pillars</span>
+          <span className="font-mono text-white/70 font-semibold">{estimate.postCount} pillars</span>
         </div>
 
         <div className="flex justify-between text-[11px] text-[#0a1628]/60">
           <span>Gates integrated:</span>
-          <span className="font-mono text-zinc-300 font-semibold">{gatesList.length} swing gates</span>
+          <span className="font-mono text-white/70 font-semibold">{gatesList.length} swing gates</span>
         </div>
       </div>
 
@@ -426,7 +426,7 @@ export default function EstimateSummary({
           type="checkbox"
           checked={includeInstall}
           onChange={(e) => setIncludeInstall(e.target.checked)}
-          className="w-4 h-4 bg-[#1a1b1f] border-[#0a1628]/40 rounded cursor-pointer"
+          className="w-4 h-4 bg-[#0f2035] border-[#0a1628]/40 rounded cursor-pointer"
           style={{ accentColor: CLIENT_CONFIG.primaryColor }}
         />
       </div>
@@ -436,34 +436,34 @@ export default function EstimateSummary({
         {/* Item 1: Panels */}
         <div className="flex justify-between text-xs text-[#0a1628]/60">
           <span className="flex items-center gap-1.5"><Truck className="w-3.5 h-3.5 text-[#0a1628]/50" /> Boundary Panels ({estimate.totalMeters}m)</span>
-          <span className="font-mono text-zinc-200">${estimate.materialCost.toLocaleString()}</span>
+          <span className="font-mono text-white">${estimate.materialCost.toLocaleString()}</span>
         </div>
         
         {/* Item 2: Upgrades */}
         <div className="flex justify-between text-xs text-[#0a1628]/60">
           <span className="flex items-center gap-1.5"><Sparkles className="w-3.5 h-3.5 text-[#0a1628]/50" /> Structural Post Upgrades</span>
-          <span className="font-mono text-zinc-200">${estimate.postsCost.toLocaleString()}</span>
+          <span className="font-mono text-white">${estimate.postsCost.toLocaleString()}</span>
         </div>
 
         {/* Item 3: Gates */}
         {estimate.gatesCost > 0 && (
           <div className="flex justify-between text-xs text-[#0a1628]/60">
             <span className="flex items-center gap-1.5"><FileCheck className="w-3.5 h-3.5 text-[#0a1628]/50" /> Premium Swing Gates</span>
-            <span className="font-mono text-zinc-200">${estimate.gatesCost.toLocaleString()}</span>
+            <span className="font-mono text-white">${estimate.gatesCost.toLocaleString()}</span>
           </div>
         )}
 
         {/* Item 4: Ancillaries (Concrete / Fasteners) */}
         <div className="flex justify-between text-xs text-[#0a1628]/60">
           <span className="flex items-center gap-1.5"><Building2 className="w-3.5 h-3.5 text-[#0a1628]/50" /> Fast-Set Concrete ({estimate.concreteBagsCount} bags)</span>
-          <span className="font-mono text-zinc-200">${estimate.concreteCost.toLocaleString()}</span>
+          <span className="font-mono text-white">${estimate.concreteCost.toLocaleString()}</span>
         </div>
 
         {/* Item 5: Installer labour */}
         {includeInstall && (
           <div className="flex justify-between text-xs text-[#0a1628]/60">
             <span className="flex items-center gap-1.5"><Wrench className="w-3.5 h-3.5 text-[#0a1628]/50" /> Certified Installation Crew</span>
-            <span className="font-mono text-zinc-200">${estimate.laborCost.toLocaleString()}</span>
+            <span className="font-mono text-white">${estimate.laborCost.toLocaleString()}</span>
           </div>
         )}
 
@@ -494,10 +494,10 @@ export default function EstimateSummary({
           <button
             onClick={handleDownloadPdf}
             disabled={isGeneratingPdf}
-            className="flex-1 py-2.5 bg-[#18191c] hover:bg-[#0f2035] border border-[#0a1628]/30 text-zinc-100 font-bold rounded-xl text-[11px] uppercase tracking-wider cursor-pointer transition-colors flex items-center justify-center gap-1.5 disabled:opacity-60 disabled:cursor-not-allowed"
+            className="flex-1 py-2.5 bg-[#0f2035] hover:bg-[#0f2035] border border-[#0a1628]/30 text-white font-bold rounded-xl text-[11px] uppercase tracking-wider cursor-pointer transition-colors flex items-center justify-center gap-1.5 disabled:opacity-60 disabled:cursor-not-allowed"
           >
             {isGeneratingPdf ? (
-              <div className="w-3.5 h-3.5 border-2 border-zinc-400 border-t-transparent rounded-full animate-spin" />
+              <div className="w-3.5 h-3.5 border-2 border-white/40 border-t-transparent rounded-full animate-spin" />
             ) : (
               <Download className="w-3.5 h-3.5" />
             )}
@@ -506,7 +506,7 @@ export default function EstimateSummary({
           <button
             onClick={handleSharePdf}
             disabled={isGeneratingPdf}
-            className="px-4 py-2.5 bg-[#18191c] hover:bg-[#0f2035] border border-[#0a1628]/30 text-zinc-100 font-bold rounded-xl text-[11px] uppercase tracking-wider cursor-pointer transition-colors flex items-center justify-center gap-1.5 disabled:opacity-60 disabled:cursor-not-allowed"
+            className="px-4 py-2.5 bg-[#0f2035] hover:bg-[#0f2035] border border-[#0a1628]/30 text-white font-bold rounded-xl text-[11px] uppercase tracking-wider cursor-pointer transition-colors flex items-center justify-center gap-1.5 disabled:opacity-60 disabled:cursor-not-allowed"
             title="Share the PDF via WhatsApp, email, etc."
           >
             <Share2 className="w-3.5 h-3.5" />
@@ -534,7 +534,7 @@ export default function EstimateSummary({
         </button>
 
         {showCRMInbox && (
-          <div className="flex flex-col gap-2 p-3 rounded-xl border max-h-52 overflow-y-auto bg-[#18191c] border-[#0a1628]/30 relative z-30 pointer-events-auto">
+          <div className="flex flex-col gap-2 p-3 rounded-xl border max-h-52 overflow-y-auto bg-[#0f2035] border-[#0a1628]/30 relative z-30 pointer-events-auto">
             <div className="flex justify-between items-center text-[10px] border-b pb-1.5 mb-1.5 border-[#0a1628]/30">
               <span className="font-semibold uppercase text-[#0a1628]/60">Interactive Ledger</span>
               <button onClick={clearCRMInboxes} className="text-[#f97316] hover:text-[#f97316] text-[10px] font-sans font-medium cursor-pointer">
@@ -560,7 +560,7 @@ export default function EstimateSummary({
                     <span>{inq.planSummary?.material || "Fence Block"} ({inq.fenceLength}m)</span>
                     <span className="text-[#0a1628]/50 font-mono">{inq.createdAt}</span>
                   </div>
-                  <p className="text-[9.5px] leading-relaxed mt-1 italic font-light p-1.5 rounded border text-zinc-300 bg-[#121315] border-[#0a1628]/30/80 line-clamp-1">
+                  <p className="text-[9.5px] leading-relaxed mt-1 italic font-light p-1.5 rounded border text-white/70 bg-[#0d1b2e] border-[#0a1628]/30 line-clamp-1">
                     Address: {inq.address}
                   </p>
                 </div>
@@ -591,9 +591,9 @@ export default function EstimateSummary({
 
             {/* Modal Body */}
             <div className="p-6 overflow-y-auto flex-1 flex flex-col gap-5">
-              <div className="bg-[#18191c] p-4 rounded-xl border border-[#0a1628]/30 flex flex-col gap-2">
+              <div className="bg-[#0f2035] p-4 rounded-xl border border-[#0a1628]/30 flex flex-col gap-2">
                 <span className="text-[10px] text-[#0a1628]/50 font-bold uppercase tracking-wider">Layout Specifications</span>
-                <ul className="text-xs text-zinc-300 grid grid-cols-2 gap-y-1.5 gap-x-3.5 list-disc pl-4">
+                <ul className="text-xs text-white/70 grid grid-cols-2 gap-y-1.5 gap-x-3.5 list-disc pl-4">
                   <li>Material: <b className="text-white">{selectedPastInquiry.planSummary?.material || "Slat Fencing"}</b></li>
                   <li>Height: <b className="text-white">{selectedPastInquiry.planSummary?.height || 1200}mm</b></li>
                   <li>Color: <b className="text-white">{selectedPastInquiry.planSummary?.colorName || "Monument"}</b></li>
@@ -611,30 +611,30 @@ export default function EstimateSummary({
                 <span className="text-xs font-bold text-[#f97316] uppercase tracking-widest leading-none">Client & Site Information</span>
                 
                 <div className="grid grid-cols-2 gap-3 text-xs">
-                  <div className="bg-[#18191c] p-3 rounded-lg border border-[#0a1628]/30">
+                  <div className="bg-[#0f2035] p-3 rounded-lg border border-[#0a1628]/30">
                     <span className="text-[10px] text-[#0a1628]/50 font-medium block">Full Name</span>
                     <span className="text-white font-semibold">{selectedPastInquiry.fullName}</span>
                   </div>
-                  <div className="bg-[#18191c] p-3 rounded-lg border border-[#0a1628]/30">
+                  <div className="bg-[#0f2035] p-3 rounded-lg border border-[#0a1628]/30">
                     <span className="text-[10px] text-[#0a1628]/50 font-medium block">Phone</span>
                     <span className="text-white font-mono">{selectedPastInquiry.phone}</span>
                   </div>
                 </div>
 
-                <div className="bg-[#18191c] p-3 rounded-lg border border-[#0a1628]/30 text-xs">
+                <div className="bg-[#0f2035] p-3 rounded-lg border border-[#0a1628]/30 text-xs">
                   <span className="text-[10px] text-[#0a1628]/50 font-medium block">Email Address</span>
                   <span className="text-white font-mono">{selectedPastInquiry.email}</span>
                 </div>
 
-                <div className="bg-[#18191c] p-3 rounded-lg border border-[#0a1628]/30 text-xs">
+                <div className="bg-[#0f2035] p-3 rounded-lg border border-[#0a1628]/30 text-xs">
                   <span className="text-[10px] text-[#0a1628]/50 font-medium block">{CLIENT_CONFIG.regionState + " Site Address"}</span>
                   <span className="text-white">{selectedPastInquiry.address}</span>
                 </div>
 
                 {selectedPastInquiry.message && (
-                  <div className="bg-[#18191c] p-3 rounded-lg border border-[#0a1628]/30 text-xs">
+                  <div className="bg-[#0f2035] p-3 rounded-lg border border-[#0a1628]/30 text-xs">
                     <span className="text-[10px] text-[#0a1628]/50 font-medium block">Site Remarks / Notes</span>
-                    <p className="text-zinc-300 italic mt-1 font-light leading-relaxed">
+                    <p className="text-white/70 italic mt-1 font-light leading-relaxed">
                       "{selectedPastInquiry.message}"
                     </p>
                   </div>
@@ -651,10 +651,10 @@ export default function EstimateSummary({
                   <button
                     onClick={() => handleDownloadRecordPdf(selectedPastInquiry)}
                     disabled={isGeneratingRecordPdf}
-                    className="flex-1 py-2.5 bg-[#18191c] hover:bg-[#0f2035] border border-[#0a1628]/30 text-zinc-100 font-bold rounded-xl text-[11px] uppercase tracking-wider cursor-pointer transition-colors flex items-center justify-center gap-1.5 disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="flex-1 py-2.5 bg-[#0f2035] hover:bg-[#0f2035] border border-[#0a1628]/30 text-white font-bold rounded-xl text-[11px] uppercase tracking-wider cursor-pointer transition-colors flex items-center justify-center gap-1.5 disabled:opacity-60 disabled:cursor-not-allowed"
                   >
                     {isGeneratingRecordPdf ? (
-                      <div className="w-3.5 h-3.5 border-2 border-zinc-400 border-t-transparent rounded-full animate-spin" />
+                      <div className="w-3.5 h-3.5 border-2 border-white/40 border-t-transparent rounded-full animate-spin" />
                     ) : (
                       <Download className="w-3.5 h-3.5" />
                     )}
@@ -663,7 +663,7 @@ export default function EstimateSummary({
                   <button
                     onClick={() => handleShareRecordPdf(selectedPastInquiry)}
                     disabled={isGeneratingRecordPdf}
-                    className="px-4 py-2.5 bg-[#18191c] hover:bg-[#0f2035] border border-[#0a1628]/30 text-zinc-100 font-bold rounded-xl text-[11px] uppercase tracking-wider cursor-pointer transition-colors flex items-center justify-center gap-1.5 disabled:opacity-60 disabled:cursor-not-allowed"
+                    className="px-4 py-2.5 bg-[#0f2035] hover:bg-[#0f2035] border border-[#0a1628]/30 text-white font-bold rounded-xl text-[11px] uppercase tracking-wider cursor-pointer transition-colors flex items-center justify-center gap-1.5 disabled:opacity-60 disabled:cursor-not-allowed"
                     title="Share the PDF via WhatsApp, email, etc."
                   >
                     <Share2 className="w-3.5 h-3.5" />
@@ -680,7 +680,7 @@ export default function EstimateSummary({
             <div className="px-6 py-4 border-t border-[#0a1628]/30 bg-[#0d1b2e] flex justify-end">
               <button 
                 onClick={() => setSelectedPastInquiry(null)}
-                className="bg-[#0f2035] hover:bg-[#122845] text-zinc-100 font-bold py-2.5 px-5 rounded-lg text-xs uppercase cursor-pointer"
+                className="bg-[#0f2035] hover:bg-[#122845] text-white font-bold py-2.5 px-5 rounded-lg text-xs uppercase cursor-pointer"
               >
                 Close Record
               </button>
@@ -713,9 +713,9 @@ export default function EstimateSummary({
               
               {!isSubmitted ? (
                 <form onSubmit={handleFormSubmit} className="flex flex-col gap-4">
-                  <div className="bg-[#18191c] p-4 rounded-xl border border-[#0a1628]/30 flex flex-col gap-2">
+                  <div className="bg-[#0f2035] p-4 rounded-xl border border-[#0a1628]/30 flex flex-col gap-2">
                     <span className="text-[10px] text-[#0a1628]/50 font-bold uppercase tracking-wider">Configured Layout Specifications</span>
-                    <ul className="text-xs text-zinc-300 grid grid-cols-2 gap-y-1.5 gap-x-3.5 list-disc pl-4">
+                    <ul className="text-xs text-white/70 grid grid-cols-2 gap-y-1.5 gap-x-3.5 list-disc pl-4">
                       <li>Material: <b className="text-white">{FENCE_PRICES[material].label}</b></li>
                       <li>Height: <b className="text-white">{height}mm</b></li>
                       <li>Color: <b className="text-white">{color.name}</b></li>
@@ -742,7 +742,7 @@ export default function EstimateSummary({
                         value={fullName}
                         onChange={(e) => setFullName(e.target.value)}
                         placeholder="Jack Taylor"
-                        className="w-full text-xs bg-[#18191c] border border-[#0a1628]/30 text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-[#00aaff] transition"
+                        className="w-full text-xs bg-[#0f2035] border border-[#0a1628]/30 text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-[#00aaff] transition"
                       />
                     </div>
 
@@ -757,7 +757,7 @@ export default function EstimateSummary({
                           value={email}
                           onChange={(e) => setEmail(e.target.value)}
                           placeholder="client@gmail.com"
-                          className="w-full text-xs bg-[#18191c] border border-[#0a1628]/30 text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-[#00aaff] transition"
+                          className="w-full text-xs bg-[#0f2035] border border-[#0a1628]/30 text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-[#00aaff] transition"
                         />
                       </div>
                       
@@ -770,7 +770,7 @@ export default function EstimateSummary({
                           value={phone}
                           onChange={(e) => setPhone(e.target.value)}
                           placeholder="+61 400 000 000"
-                          className="w-full text-xs bg-[#18191c] border border-[#0a1628]/30 text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-[#00aaff] transition"
+                          className="w-full text-xs bg-[#0f2035] border border-[#0a1628]/30 text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-[#00aaff] transition"
                         />
                       </div>
                     </div>
@@ -785,7 +785,7 @@ export default function EstimateSummary({
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
                         placeholder="29 Belmore Road, Randwick NSW 2031"
-                        className="w-full text-xs bg-[#18191c] border border-[#0a1628]/30 text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-[#00aaff] transition"
+                        className="w-full text-xs bg-[#0f2035] border border-[#0a1628]/30 text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-[#00aaff] transition"
                       />
                     </div>
 
@@ -798,7 +798,7 @@ export default function EstimateSummary({
                         value={remarks}
                         onChange={(e) => setRemarks(e.target.value)}
                         placeholder="Driveway slope, sand ground conditions, or gate remote electrical requirements etc."
-                        className="w-full text-xs bg-[#18191c] border border-[#0a1628]/30 text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-[#00aaff] transition resize-none"
+                        className="w-full text-xs bg-[#0f2035] border border-[#0a1628]/30 text-white px-3 py-2.5 rounded-lg focus:outline-none focus:border-[#00aaff] transition resize-none"
                       />
                     </div>
                   </div>
@@ -808,7 +808,7 @@ export default function EstimateSummary({
                     <button
                       type="button"
                       onClick={() => setShowQuoteModal(false)}
-                      className="px-4 py-2.5 rounded-lg bg-[#0f2035] text-zinc-300 text-xs hover:bg-zinc-750 transition cursor-pointer font-bold uppercase select-none"
+                      className="px-4 py-2.5 rounded-lg bg-[#0f2035] text-white/70 text-xs hover:bg-[#122845] transition cursor-pointer font-bold uppercase select-none"
                     >
                       Cancel
                     </button>
@@ -841,10 +841,10 @@ export default function EstimateSummary({
                     </p>
                   </div>
 
-                  <div className="bg-[#18191c] p-4 rounded-xl border border-[#0a1628]/30 w-full text-left mt-3">
+                  <div className="bg-[#0f2035] p-4 rounded-xl border border-[#0a1628]/30 w-full text-left mt-3">
                     <span className="text-[9px] text-[#0a1628]/50 font-extrabold uppercase tracking-widest block mb-1">{CLIENT_CONFIG.companyName} Proposal Receipt</span>
                     <span className="text-[9.5px] text-[#0a1628]/50 font-extrabold uppercase block mb-3 font-mono">{CLIENT_CONFIG.companyLegalShort}</span>
-                    <div className="grid grid-cols-2 gap-y-1.5 text-[11px] text-zinc-300">
+                    <div className="grid grid-cols-2 gap-y-1.5 text-[11px] text-white/70">
                       <span>Proposal ID:</span>
                       <span className="font-mono text-[#f97316] text-right font-bold">#{CLIENT_CONFIG.proposalIdPrefix}-{Date.now().toString().slice(-5)}</span>
 

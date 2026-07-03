@@ -184,7 +184,7 @@ export default function App() {
 
   if (!isAuthenticated) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen w-full max-w-full bg-[#0a1628] text-zinc-100 font-sans p-4 relative overflow-hidden select-none">
+      <div className="flex flex-col items-center justify-center min-h-screen w-full max-w-full bg-[#0a1628] text-white font-sans p-4 relative overflow-hidden select-none">
         
         {/* Ambient background accent */}
         <div className="absolute -top-40 -left-40 w-96 h-96 rounded-full bg-[#f97316]/5 blur-3xl pointer-events-none" />
@@ -193,10 +193,10 @@ export default function App() {
         {/* Main login container */}
         <div className="w-full max-w-[440px] bg-[#0d1b2e] border border-[#0a1628]/30 rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.8)] overflow-hidden relative z-10 flex flex-col">
           
-          {/* Header block with red fence badge */}
+          {/* Header block with brand logo */}
           <div className="bg-[#0a1628] border-b border-[#0a1628]/30 p-8 flex flex-col items-center">
-            <div className="w-[76px] h-[76px] flex items-center justify-center rounded-lg shadow-lg mb-4" style={{ backgroundColor: CLIENT_CONFIG.logoAccentColor }}>
-              <FenceLogo className="w-11 h-11 text-white animate-pulse" />
+            <div className="w-[91px] h-[91px] flex items-center justify-center rounded-lg shadow-lg mb-4" style={{ backgroundColor: CLIENT_CONFIG.logoAccentColor }}>
+              <FenceLogo className="w-[52px] h-[52px] text-white animate-pulse" />
             </div>
             
             <div className="flex flex-col items-center select-none mt-2">
@@ -224,7 +224,7 @@ export default function App() {
                   value={passwordInput}
                   onChange={(e) => setPasswordInput(e.target.value)}
                   placeholder="Enter access code"
-                  className="w-full h-11 bg-[#1a1b1f] border border-[#0a1628]/30 focus:border-[#00aaff]/50 focus:ring-1 focus:ring-[#f97316]/40 rounded-lg pl-10 pr-12 text-xs tracking-widest text-white placeholder-zinc-600 transition outline-none"
+                  className="w-full h-11 bg-[#0f2035] border border-[#0a1628]/30 focus:border-[#00aaff]/50 focus:ring-1 focus:ring-[#f97316]/40 rounded-lg pl-10 pr-12 text-xs tracking-widest text-white placeholder-white/40 transition outline-none"
                   autoFocus
                   required
                 />
@@ -232,7 +232,7 @@ export default function App() {
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 -translate-y-1/2 h-7 w-7 bg-[#212327] hover:bg-[#2e3137] border border-[#0a1628]/40/50 hover:border-zinc-500 rounded-lg flex items-center justify-center text-[#0a1628]/60 hover:text-white transition-all shadow-sm focus:outline-none"
+                  className="absolute right-3 top-1/2 -translate-y-1/2 h-7 w-7 bg-[#212327] hover:bg-[#2e3137] border border-[#0a1628]/40/50 hover:border-[#0a1628]/30 rounded-lg flex items-center justify-center text-[#0a1628]/60 hover:text-white transition-all shadow-sm focus:outline-none"
                   title={showPassword ? "Hide password" : "Show password"}
                 >
                   {showPassword ? (
@@ -259,7 +259,7 @@ export default function App() {
                   type="checkbox"
                   checked={rememberMe}
                   onChange={(e) => setRememberMe(e.target.checked)}
-                  className="w-3.5 h-3.5 accent-[#f97316] bg-[#1a1b1f] border-[#0a1628]/40 rounded cursor-pointer"
+                  className="w-3.5 h-3.5 accent-[#f97316] bg-[#0f2035] border-[#0a1628]/40 rounded cursor-pointer"
                 />
                 <span className="text-[11px] text-[#0a1628]/60 font-sans">Remember login on this device</span>
               </label>
@@ -291,17 +291,16 @@ export default function App() {
   }
 
   return (
-    <div className="flex flex-col h-screen w-full max-w-full bg-[#0d1b2e] text-zinc-100 overflow-hidden font-sans select-none">
+    <div className="flex flex-col h-screen w-full max-w-full bg-[#0d1b2e] text-white overflow-hidden font-sans select-none">
       
-      {/* Primary header brand bar exactly matching the Fencing Pro visual guidelines */}
+      {/* Primary header brand bar */}
       {!isFullScreen ? (
         <header className="h-[76px] border-b border-[#0a1628]/30 bg-[#0a1628] flex items-center justify-between px-0 shrink-0 z-40 shadow-xl">
-          
-          {/* Leftmost brand signature logo blocks based on input_file_1.png */}
+
+          {/* Leftmost brand signature logo block */}
           <div className="flex items-center h-full select-none shrink-0">
-            {/* Accent red square block with white stylized Fence logo inside */}
-            <div className="w-[76px] h-[76px] flex items-center justify-center shrink-0 border-r border-[#222]" style={{ backgroundColor: CLIENT_CONFIG.logoAccentColor }}>
-              <FenceLogo className="w-11.5 h-11.5 text-white animate-pulse" />
+            <div className="w-[76px] h-[76px] flex items-center justify-center shrink-0 border-r border-[#0a1628]/30" style={{ backgroundColor: CLIENT_CONFIG.logoAccentColor }}>
+              <FenceLogo className="w-[52px] h-[52px] text-white animate-pulse" />
             </div>
 
             <div className="flex flex-col justify-center pl-6 pr-6 h-full border-r border-[#0a1628]/30">
@@ -317,10 +316,10 @@ export default function App() {
           <div className="hidden xl:flex flex-col items-start gap-0.5 text-[#0a1628]/60 font-sans px-4 shrink">
             <div className="flex items-center gap-1.5 text-[10px] font-bold text-[#0a1628]/50 uppercase tracking-widest leading-none">
               <span>{CLIENT_CONFIG.companyTagline.split(' · ')[0]}</span>
-              <span className="text-zinc-700">&#8226;</span>
+              <span className="text-white/60">&#8226;</span>
               <span className="text-[#00aaff] font-bold">{CLIENT_CONFIG.companyTagline.split(' · ')[1]}</span>
             </div>
-            <span className="text-[11px] font-mono text-zinc-300 tracking-wider">
+            <span className="text-[11px] font-mono text-white/70 tracking-wider">
               {CLIENT_CONFIG.companyLegal}
             </span>
           </div>
@@ -349,10 +348,8 @@ export default function App() {
             {/* Controls toggle */}
             <button
               onClick={() => setIsLeftPanelOpen(!isLeftPanelOpen)}
-              className={`p-2 rounded-lg flex items-center justify-center gap-1.5 text-xs font-semibold border transition-all cursor-pointer ${
-                isLeftPanelOpen
-                  ? 'bg-[#f97316]/10 text-[#f97316] border-[#f97316]/20'
-                  : 'bg-[#0f2035] hover:bg-[#122845] text-[#0a1628]/60 border-[#0a1628]/40'
+              className={`p-2 rounded-lg flex items-center justify-center gap-1.5 text-xs font-semibold border transition-all cursor-pointer border-[#f97316] hover:bg-[#f97316] hover:text-white ${
+                isLeftPanelOpen ? 'bg-[#f97316] text-white' : 'bg-transparent text-[#f97316]'
               }`}
               title="Toggle left design control sidebar"
             >
@@ -363,10 +360,8 @@ export default function App() {
             {/* Pricing toggle */}
             <button
               onClick={() => setIsRightPanelOpen(!isRightPanelOpen)}
-              className={`p-2 rounded-lg flex items-center justify-center gap-1.5 text-xs font-semibold border transition-all cursor-pointer ${
-                isRightPanelOpen
-                  ? 'bg-[#f97316]/10 text-[#f97316] border-[#f97316]/20'
-                  : 'bg-[#0f2035] hover:bg-[#122845] text-[#0a1628]/60 border-[#0a1628]/40'
+              className={`p-2 rounded-lg flex items-center justify-center gap-1.5 text-xs font-semibold border transition-all cursor-pointer border-[#f97316] hover:bg-[#f97316] hover:text-white ${
+                isRightPanelOpen ? 'bg-[#f97316] text-white' : 'bg-transparent text-[#f97316]'
               }`}
               title="Toggle right pricing breakdown sidebar"
             >
@@ -377,7 +372,7 @@ export default function App() {
             {/* Tutorial button */}
             <button
               onClick={() => setShowTutorial(true)}
-              className="p-2 bg-[#122845] hover:bg-[#34363c] text-[#f97316] rounded-lg transition-colors cursor-pointer border border-[#f97316]/15 flex items-center justify-center gap-1.5 text-xs font-semibold"
+              className="p-2 bg-transparent hover:bg-[#f97316] hover:text-white text-[#f97316] rounded-lg transition-colors cursor-pointer border border-[#f97316] flex items-center justify-center gap-1.5 text-xs font-semibold"
             >
               <HelpCircle className="w-4 h-4" />
               <span className="hidden sm:inline">Guide</span>
@@ -550,35 +545,35 @@ export default function App() {
               </button>
             </div>
 
-            <div className="p-6 overflow-y-auto flex flex-col gap-5 leading-relaxed text-zinc-300 font-sans">
+            <div className="p-6 overflow-y-auto flex flex-col gap-5 leading-relaxed text-white/70 font-sans">
               <h3 className="text-sm font-extrabold text-[#f97316] uppercase tracking-widest leading-none">Interactive Visual Boundary Controls</h3>
               <p className="text-xs text-[#0a1628]/60">
                 This simulator is designed to give {CLIENT_CONFIG.companyName} consultants and their respected clients a professional edge by overlaying highly accurate, responsive boundary design mockups onto residential properties.
               </p>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-1">
-                <div className="bg-[#18191c] p-4.5 rounded-xl border border-[#0a1628]/30">
+                <div className="bg-[#0f2035] p-4.5 rounded-xl border border-[#0a1628]/30">
                   <span className="text-xs font-bold text-white block mb-1">📌 Drag Anchor Handles</span>
                   <p className="text-[11px] text-[#0a1628]/60 leading-normal">
                     Drag the circular anchors overlaying the grass to stretch and fit the fence directly along lawn contours. It calculates matching spatial spacing and physical structural lengths.
                   </p>
                 </div>
                 
-                <div className="bg-[#18191c] p-4.5 rounded-xl border border-[#0a1628]/30">
+                <div className="bg-[#0f2035] p-4.5 rounded-xl border border-[#0a1628]/30">
                   <span className="text-xs font-bold text-white block mb-1">🎨 Premium Colors Palette</span>
                   <p className="text-[11px] text-[#0a1628]/60 leading-normal">
                     Select between Monument, Surfmist, Basalt, or Hardwood Woodgrains. Contrast colors by assigning separate finishes to vertical posts and horizontal slats.
                   </p>
                 </div>
 
-                <div className="bg-[#18191c] p-4.5 rounded-xl border border-[#0a1628]/30">
+                <div className="bg-[#0f2035] p-4.5 rounded-xl border border-[#0a1628]/30">
                   <span className="text-xs font-bold text-white block mb-1">🗒 Interactive Post & Slat Editors</span>
                   <p className="text-[11px] text-[#0a1628]/60 leading-normal">
                     Click any post directly on canvas to upgrade to standard, corner, H-post, gate support, or decorative columns. Click any fence segment to mount gates and slide their width.
                   </p>
                 </div>
 
-                <div className="bg-[#18191c] p-4.5 rounded-xl border border-[#0a1628]/30">
+                <div className="bg-[#0f2035] p-4.5 rounded-xl border border-[#0a1628]/30">
                   <span className="text-xs font-bold text-white block mb-1">📸 Client Photo Overlay</span>
                   <p className="text-[11px] text-[#0a1628]/60 leading-normal">
                     Snap a photo of the client's property, upload it directly with the <strong>Upload Photo</strong> button on the canvas, and trace the mockup on their real home grounds!
