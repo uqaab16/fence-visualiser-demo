@@ -97,14 +97,14 @@ export async function buildQuotePdf(data: QuotePdfData): Promise<jsPDF> {
   const pageH = doc.internal.pageSize.getHeight();
 
   // ---- Palette ----
-  const primary = hexToRgb(CLIENT_CONFIG.primaryColor);
-  const onPrimary = hexToRgb(getContrastTextColor(CLIENT_CONFIG.primaryColor)); // #000 or #fff
-  const infoBg = tint(primary, 0.15); // 15% brand tint on white
-  const heading: [number, number, number] = [0, 170, 255]; // #00aaff light blue for section headings
-  const pillBg: [number, number, number] = [235, 240, 248];
-  const dark: [number, number, number] = [10, 22, 40];
-  const muted: [number, number, number] = [60, 75, 100];
-  const hairline: [number, number, number] = [180, 195, 215];
+  const primary = hexToRgb(CLIENT_CONFIG.primaryColor); // #0a3d5c dark teal
+  const onPrimary: [number, number, number] = [255, 255, 255];
+  const accent: [number, number, number] = [0, 170, 255]; // #00aaff
+  const infoBg: [number, number, number] = [248, 250, 252]; // #f8fafc
+  const pillBg: [number, number, number] = [241, 245, 249]; // #f1f5f9
+  const dark: [number, number, number] = [26, 35, 50]; // #1a2332
+  const muted: [number, number, number] = [107, 114, 128]; // #6b7280
+  const hairline: [number, number, number] = [226, 232, 240]; // #e2e8f0
 
   const setFill = (c: [number, number, number]) => doc.setFillColor(c[0], c[1], c[2]);
   const setText = (c: [number, number, number]) => doc.setTextColor(c[0], c[1], c[2]);
@@ -153,7 +153,7 @@ export async function buildQuotePdf(data: QuotePdfData): Promise<jsPDF> {
 
   // Right: "QUOTE" + quote number
   const rightX = pageW - padX;
-  setText(onPrimary);
+  setText([0, 170, 255]); // accent blue for QUOTE text on dark header
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(26);
   doc.text('QUOTE', rightX, headerPadTop + 20, { align: 'right' });
@@ -181,10 +181,12 @@ export async function buildQuotePdf(data: QuotePdfData): Promise<jsPDF> {
 
   const drawInfoCol = (x: number, label: string, rows: string[]) => {
     let cy = infoY;
+    setFill(accent);
+    doc.rect(x, cy - 7, 2, 10, 'F'); // accent vertical bar
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(8);
-    setText(heading);
-    doc.text(label, x, cy);
+    setText(primary);
+    doc.text(label, x + 6, cy);
     cy += 14;
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(9);
@@ -213,12 +215,13 @@ export async function buildQuotePdf(data: QuotePdfData): Promise<jsPDF> {
 
   y += infoH;
 
-  // Section label in the brand colour
   const sectionLabel = (text: string, yy: number) => {
+    setFill(accent);
+    doc.rect(contentX, yy - 8, 2, 11, 'F'); // accent vertical bar
     doc.setFont('helvetica', 'bold');
     doc.setFontSize(10);
-    setText(heading);
-    doc.text(text, contentX, yy);
+    setText(primary);
+    doc.text(text, contentX + 6, yy);
   };
 
   // =====================================================================
@@ -274,41 +277,42 @@ export async function buildQuotePdf(data: QuotePdfData): Promise<jsPDF> {
   y += 15;
 
   const rowH = 18;
-  const bullet = 5;
   data.lineItems.forEach((item) => {
-    setFill(primary);
-    doc.rect(contentX, y - bullet, bullet, bullet, 'F'); // brand-colour bullet square
+    setFill(accent);
+    doc.circle(contentX + 3, y - 2, 2.5, 'F'); // accent blue bullet dot
     doc.setFont('helvetica', 'normal');
     doc.setFontSize(9.5);
     setText(dark);
-    doc.text(item.label, contentX + bullet + 6, y);
+    doc.text(item.label, contentX + 12, y);
     doc.text(money(item.amount), pageW - padX, y, { align: 'right' });
     setDraw(hairline);
     doc.setLineWidth(0.5);
-    doc.line(contentX, y + 6, pageW - padX, y + 6); // thin separator
+    doc.line(contentX, y + 6, pageW - padX, y + 6);
     y += rowH;
   });
 
   // =====================================================================
-  // TOTAL BAR — full-width brand band
+  // TOTAL — text on white with top border
   // =====================================================================
-  y += 8;
-  const totalH = 40;
-  setFill(primary);
-  doc.rect(0, y, pageW, totalH, 'F');
-  setText(onPrimary);
+  y += 12;
+  setDraw(hairline);
+  doc.setLineWidth(1);
+  doc.line(contentX, y, pageW - padX, y);
+  y += 20;
+  setText(primary);
   doc.setFont('helvetica', 'bold');
   doc.setFontSize(12);
-  doc.text('Total (inc. GST)', contentX, y + totalH / 2 + 4);
+  doc.text('Total (inc. GST)', contentX, y);
+  setText(dark);
   doc.setFontSize(18);
-  doc.text(money(data.total), pageW - padX, y + totalH / 2 + 5, { align: 'right' });
-  y += totalH;
+  doc.text(money(data.total), pageW - padX, y + 1, { align: 'right' });
+  y += 20;
 
   // =====================================================================
   // FOOTER — pinned near the bottom, muted grey
   // =====================================================================
   const footerBottom = pageH - 18;
-  const termsColor: [number, number, number] = [40, 55, 80];
+  const termsColor: [number, number, number] = [107, 114, 128]; // #6b7280
   doc.setFont('helvetica', 'normal');
   doc.setFontSize(8.5);
   setText(termsColor);
@@ -335,7 +339,8 @@ export async function buildQuotePdf(data: QuotePdfData): Promise<jsPDF> {
   doc.text(termsLines, contentX, fy);
   fy += termsBlockH + legalGap;
 
-  setText(muted);
+  setText(primary);
+  doc.setFont('helvetica', 'bold');
   doc.setFontSize(7);
   doc.text(CLIENT_CONFIG.companyLegalShort, contentX, fy);
 

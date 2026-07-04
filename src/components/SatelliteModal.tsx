@@ -104,24 +104,24 @@ export default function SatelliteModal({ isOpen, onClose, onSelectDistance }: Sa
   // Real Google Maps logic wrapper
   return (
     <div className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-      <div className="bg-[#0f2035] border border-[#0a1628]/40 w-full max-w-4xl h-[85vh] rounded-2xl overflow-hidden shadow-2xl flex flex-col">
+      <div className="bg-white border border-[#e2e8f0] w-full max-w-4xl h-[85vh] rounded-2xl overflow-hidden shadow-2xl flex flex-col">
         
         {/* Header bar */}
-        <div className="px-6 py-4 bg-[#0d1b2e] border-b border-[#0a1628]/30 flex items-center justify-between shrink-0">
+        <div className="px-6 py-4 bg-white border-b border-[#e2e8f0] flex items-center justify-between shrink-0">
           <div className="flex items-center gap-2">
-            <Satellite className="w-5 h-5 text-[#f97316] animate-pulse" />
+            <Satellite className="w-5 h-5 text-[#0a3d5c] animate-pulse" />
             <div>
-              <h3 className="text-sm font-extrabold text-white uppercase tracking-wider">
+              <h3 className="text-sm font-extrabold text-[#0a3d5c] uppercase tracking-wider">
                 Satellite Boundary Estimator
               </h3>
-              <p className="text-[10px] text-white/70 uppercase tracking-widest font-mono">
+              <p className="text-[10px] text-[#6b7280] uppercase tracking-widest font-mono">
                 {hasValidKey ? "Connected to Google Maps Live API" : "Simulated Local sandbox active"}
               </p>
             </div>
           </div>
           <button 
             onClick={onClose}
-            className="p-1 text-white/70 hover:text-white transition rounded-full hover:bg-[#0f2035] cursor-pointer"
+            className="p-1 text-[#6b7280] hover:text-[#0a3d5c] transition rounded-full hover:bg-white cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -161,33 +161,33 @@ export default function SatelliteModal({ isOpen, onClose, onSelectDistance }: Sa
           </div>
 
           {/* Right Control Dashboard */}
-          <div className="w-full md:w-80 bg-[#0d1b2e] border-t md:border-t-0 md:border-l border-[#0a1628]/30 p-5 flex flex-col justify-between shrink-0 overflow-y-auto">
+          <div className="w-full md:w-80 bg-white border-t md:border-t-0 md:border-l border-[#e2e8f0] p-5 flex flex-col justify-between shrink-0 overflow-y-auto">
             <div className="flex flex-col gap-4">
               
               <div className="space-y-1.5">
-                <span className="text-[10px] text-[#f97316] font-extrabold uppercase tracking-widest block font-mono">
+                <span className="text-[10px] text-[#0a3d5c] font-extrabold uppercase tracking-widest block font-mono">
                   Instructions
                 </span>
-                <p className="text-[11px] text-white/70 leading-relaxed">
+                <p className="text-[11px] text-[#6b7280] leading-relaxed">
                   Click on the yard map to drop multiple boundary points/corners of your fence. Select any single segment or apply the entire perimeter.
                 </p>
               </div>
 
               {/* API Key Warning block if offline */}
               {!hasValidKey && (
-                <div className="bg-[#f97316]/10 border border-[#f97316]/15 p-3 rounded-xl space-y-1 shadow">
-                  <div className="flex items-center gap-1.5 text-[#f97316] text-[9.5px] font-extrabold uppercase tracking-widest font-mono">
-                    <Info className="w-3.5 h-3.5 text-[#f97316] shrink-0" />
+                <div className="bg-[#0a3d5c]/10 border border-[#e2e8f0] p-3 rounded-xl space-y-1 shadow">
+                  <div className="flex items-center gap-1.5 text-[#0a3d5c] text-[9.5px] font-extrabold uppercase tracking-widest font-mono">
+                    <Info className="w-3.5 h-3.5 text-[#0a3d5c] shrink-0" />
                     Offline Sandbox Mode
                   </div>
-                  <p className="text-[10px] text-white/70 leading-relaxed font-sans">
+                  <p className="text-[10px] text-[#6b7280] leading-relaxed font-sans">
                     Real satellite search is offline. You can still customize properties & draw boundary vertices dynamically in our local simulator!
                   </p>
                 </div>
               )}
 
               {/* Path Controls (Closed Loop Toggle & Undo) */}
-              <div className="bg-[#0f2035] border border-[#0a1628]/30/60 p-3 rounded-xl flex items-center justify-between gap-2">
+              <div className="bg-white border border-[#e2e8f0]/60 p-3 rounded-xl flex items-center justify-between gap-2">
                 <div className="flex items-center gap-1.5">
                   <input
                     type="checkbox"
@@ -195,16 +195,16 @@ export default function SatelliteModal({ isOpen, onClose, onSelectDistance }: Sa
                     checked={isClosedLoop}
                     disabled={pins.length < 3}
                     onChange={(e) => setIsClosedLoop(e.target.checked)}
-                    className="rounded border-[#0a1628]/40 bg-[#0f2035] text-[#f97316] focus:ring-[#00aaff] w-3.5 h-3.5 accent-[#f97316] disabled:opacity-40"
+                    className="rounded border-[#e2e8f0] bg-white text-[#0a3d5c] focus:ring-[#00aaff] w-3.5 h-3.5 accent-[#0a3d5c] disabled:opacity-40"
                   />
-                  <label htmlFor="closeLoop" className="text-[10.5px] font-bold text-white/70 select-none cursor-pointer disabled:opacity-40">
+                  <label htmlFor="closeLoop" className="text-[10.5px] font-bold text-[#6b7280] select-none cursor-pointer disabled:opacity-40">
                     Close Boundary Loop
                   </label>
                 </div>
                 {pins.length > 0 && (
                   <button
                     onClick={handleUndo}
-                    className="text-[10px] font-extrabold text-white/70 hover:text-white bg-[#0f2035] hover:bg-[#122845] px-2.5 py-1 rounded-md transition"
+                    className="text-[10px] font-extrabold text-[#6b7280] hover:text-[#0a3d5c] bg-white hover:bg-[#f1f5f9] px-2.5 py-1 rounded-md transition"
                   >
                     Undo Pt
                   </button>
@@ -213,25 +213,25 @@ export default function SatelliteModal({ isOpen, onClose, onSelectDistance }: Sa
 
               {/* Active Segments Interactive list */}
               <div className="space-y-2">
-                <span className="text-[9px] text-white/50 font-extrabold uppercase tracking-widest block font-mono">
+                <span className="text-[9px] text-[#9ca3af] font-extrabold uppercase tracking-widest block font-mono">
                   Calculated Segments ({segments.length})
                 </span>
                 {segments.length === 0 ? (
-                  <div className="bg-[#0d1b2e]/50 border border-dashed border-[#0a1628]/30 rounded-xl p-4 text-center text-white/50 text-[11px] italic">
+                  <div className="bg-white/50 border border-dashed border-[#e2e8f0] rounded-xl p-4 text-center text-[#9ca3af] text-[11px] italic">
                     Tap 2+ coordinates on map to produce segment dimension lines...
                   </div>
                 ) : (
-                  <div className="space-y-1.5 max-h-48 overflow-y-auto pr-0.5 divide-y divide-[#0a1628]/20/20">
+                  <div className="space-y-1.5 max-h-48 overflow-y-auto pr-0.5 divide-y divide-[#e2e8f0]/20">
                     <button
                       onClick={() => setSelectedSegmentIdx(null)}
                       className={`w-full text-left px-3 py-2 rounded-lg text-xs transition flex items-center justify-between border ${
                         selectedSegmentIdx === null
-                          ? "bg-[#f97316]/10 border-[#f97316]/40 text-[#f97316]"
-                          : "bg-[#0d1b2e] border-transparent text-white/70 hover:bg-[#0f2035] hover:text-white"
+                          ? "bg-[#0a3d5c]/10 border-[#0a3d5c]/40 text-[#0a3d5c]"
+                          : "bg-white border-transparent text-[#6b7280] hover:bg-white hover:text-[#0a3d5c]"
                       }`}
                     >
                       <span className="font-semibold">🏠 Entire Perimeter (Total)</span>
-                      <span className={`font-mono font-bold ${selectedSegmentIdx === null ? "text-[#f97316]" : "text-white/70"}`}>
+                      <span className={`font-mono font-bold ${selectedSegmentIdx === null ? "text-[#0a3d5c]" : "text-[#6b7280]"}`}>
                         {totalBoundaryDistance.toFixed(1)} m
                       </span>
                     </button>
@@ -242,15 +242,15 @@ export default function SatelliteModal({ isOpen, onClose, onSelectDistance }: Sa
                         onClick={() => setSelectedSegmentIdx(idx)}
                         className={`w-full text-left px-3 py-2 rounded-lg text-xs transition flex items-center justify-between border ${
                           selectedSegmentIdx === idx
-                            ? "bg-[#f97316]/10 border-[#f97316]/40 text-[#f97316]"
-                            : "bg-[#0d1b2e]/60 border-transparent text-white/70 hover:bg-[#0f2035] hover:text-white"
+                            ? "bg-[#0a3d5c]/10 border-[#0a3d5c]/40 text-[#0a3d5c]"
+                            : "bg-white/60 border-transparent text-[#6b7280] hover:bg-white hover:text-[#0a3d5c]"
                         }`}
                       >
                         <span className="font-sans flex items-center gap-1.5 font-medium">
                           <span className="w-1.5 h-1.5 rounded-full bg-white opacity-40" />
-                          Segment #{idx + 1} {seg.isClosing && <span className="text-[8px] bg-[#f97316]/10 text-[#f97316] px-1 py-0.2 rounded font-extrabold uppercase font-mono tracking-widest">Closed</span>}
+                          Segment #{idx + 1} {seg.isClosing && <span className="text-[8px] bg-[#0a3d5c]/10 text-[#0a3d5c] px-1 py-0.2 rounded font-extrabold uppercase font-mono tracking-widest">Closed</span>}
                         </span>
-                        <span className={`font-mono font-black ${selectedSegmentIdx === idx ? "text-[#f97316]" : "text-white/70"}`}>
+                        <span className={`font-mono font-black ${selectedSegmentIdx === idx ? "text-[#0a3d5c]" : "text-[#6b7280]"}`}>
                           {seg.length.toFixed(1)} m
                         </span>
                       </button>
@@ -260,11 +260,11 @@ export default function SatelliteModal({ isOpen, onClose, onSelectDistance }: Sa
               </div>
 
               {/* Premium Distance Output Panel */}
-              <div className="bg-[#f97316]/10 border border-[#f97316]/20 p-4 rounded-xl flex flex-col items-center justify-center text-center">
-                <span className="text-[9px] text-[#f97316] font-extrabold uppercase tracking-widest mb-1 font-mono">
+              <div className="bg-[#0a3d5c]/10 border border-[#e2e8f0] p-4 rounded-xl flex flex-col items-center justify-center text-center">
+                <span className="text-[9px] text-[#0a3d5c] font-extrabold uppercase tracking-widest mb-1 font-mono">
                   {selectedSegmentIdx !== null ? `Segment #${selectedSegmentIdx + 1} Dimension` : "Total Perimeter"}
                 </span>
-                <span className="text-3xl font-black text-white font-sans tracking-tight">
+                <span className="text-3xl font-black text-[#0a3d5c] font-sans tracking-tight">
                   {distance > 0 ? `${distance} m` : '---'}
                 </span>
                 {distance > 0 && (
@@ -281,7 +281,7 @@ export default function SatelliteModal({ isOpen, onClose, onSelectDistance }: Sa
               {pins.length > 0 && (
                 <button
                   onClick={handleReset}
-                  className="w-full flex items-center justify-center gap-1.5 font-bold py-2 bg-[#0d1b2e] hover:bg-[#0f2035] text-white/70 hover:text-white border border-[#0a1628]/30 rounded-lg text-[10.5px] uppercase tracking-wider transition cursor-pointer"
+                  className="w-full flex items-center justify-center gap-1.5 font-bold py-2 bg-white hover:bg-[#f1f5f9] text-[#6b7280] hover:text-[#0a3d5c] border border-[#e2e8f0] rounded-lg text-[10.5px] uppercase tracking-wider transition cursor-pointer"
                 >
                   <RefreshCw className="w-3.5 h-3.5" /> Clear All Points
                 </button>
@@ -297,8 +297,8 @@ export default function SatelliteModal({ isOpen, onClose, onSelectDistance }: Sa
                 }}
                 className={`w-full flex items-center justify-center gap-2 font-extrabold py-3 rounded-xl text-xs uppercase tracking-wider transition cursor-pointer shadow-lg border ${
                   distance > 0
-                    ? 'bg-[#f97316] hover:bg-[#f97316] text-white border-[#f97316] shadow-[#f97316]/20'
-                    : 'bg-[#0f2035] border-[#0a1628]/30 text-white/50 cursor-not-allowed'
+                    ? 'bg-[#0a3d5c] hover:bg-[#0a3d5c] text-white border-[#0a3d5c] shadow-[#0a3d5c]/20'
+                    : 'bg-white border-[#e2e8f0] text-[#9ca3af] cursor-not-allowed'
                 }`}
               >
                 <Check className="w-4 h-4" /> Use {selectedSegmentIdx !== null ? `Segment (${distance}m)` : `Perimeter (${distance}m)`}
@@ -378,7 +378,7 @@ function GoogleMapContainer({
       const midLng = (seg.p1.lng + seg.p2.lng) / 2;
 
       const infoContent = `
-        <div style="background-color: #141517; color: #ffffff; font-family: monospace; font-size: 10px; font-weight: bold; padding: 3px 7px; border-radius: 5px; border: 1.5px solid #2f3136; box-shadow: 0 2px 8px rgba(0,0,0,0.4); text-align: center; pointer-events: none;">
+        <div style="background-color: #0a3d5c; color: #ffffff; font-family: monospace; font-size: 10px; font-weight: bold; padding: 3px 7px; border-radius: 5px; border: 1.5px solid #1a6b8a; box-shadow: 0 2px 8px rgba(0,0,0,0.4); text-align: center; pointer-events: none;">
           ${seg.length.toFixed(1)} m
         </div>
       `;
@@ -505,10 +505,10 @@ function GoogleMapContainer({
       {/* Dynamic Floating Search bar Form */}
       <form 
         onSubmit={handleSearchSubmit}
-        className="absolute top-4 left-4 right-4 z-40 max-w-md bg-[#0d1b2e] border border-[#0a1628]/30 rounded-xl shadow-2xl overflow-visible"
+        className="absolute top-4 left-4 right-4 z-40 max-w-md bg-white border border-[#e2e8f0] rounded-xl shadow-2xl overflow-visible"
       >
         <div className="flex items-center px-3.5 py-1.5">
-          <Search className="w-4 h-4 text-white/50 mr-2.5 shrink-0" />
+          <Search className="w-4 h-4 text-[#9ca3af] mr-2.5 shrink-0" />
           <input
             type="text"
             value={searchQuery}
@@ -517,7 +517,7 @@ function GoogleMapContainer({
               setShowSuggestions(true);
             }}
             placeholder="Search address & press Enter to locate..."
-            className="w-full bg-transparent text-sm text-white outline-none placeholder-white/40 py-1"
+            className="w-full bg-transparent text-sm text-[#1a2332] outline-none placeholder-[#9ca3af] py-1"
           />
           {searchQuery && (
             <button 
@@ -526,7 +526,7 @@ function GoogleMapContainer({
                 setSearchQuery('');
                 setSuggestions([]);
               }}
-              className="p-1 hover:bg-[#0f2035] rounded text-white/70 hover:text-white"
+              className="p-1 hover:bg-white rounded text-[#6b7280] hover:text-[#0a3d5c]"
             >
               <X className="w-3.5 h-3.5" />
             </button>
@@ -535,13 +535,13 @@ function GoogleMapContainer({
 
         {/* Suggestion Dropdown Panel */}
         {showSuggestions && suggestions.length > 0 && (
-          <div className="absolute top-full left-0 right-0 mt-1 bg-[#0f2035] border border-[#0a1628]/30 rounded-lg shadow-2xl overflow-hidden max-h-60 overflow-y-auto divide-y divide-[#0a1628]/20 z-50">
+          <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-[#e2e8f0] rounded-lg shadow-2xl overflow-hidden max-h-60 overflow-y-auto divide-y divide-[#e2e8f0] z-50">
             {suggestions.map((item) => (
               <button
                 key={item.place_id}
                 type="button"
                 onClick={() => handleSelectSuggestion(item.place_id, item.description)}
-                className="w-full text-left px-4 py-2 text-xs text-white/70 hover:text-white hover:bg-[#0f2035] transition block font-sans truncate"
+                className="w-full text-left px-4 py-2 text-xs text-[#6b7280] hover:text-[#0a3d5c] hover:bg-white transition block font-sans truncate"
               >
                 {item.description}
               </button>
@@ -552,11 +552,11 @@ function GoogleMapContainer({
 
       {/* API Warning Overlay Banner */}
       {apiError && (
-        <div className="absolute top-18 left-4 right-4 z-40 max-w-md bg-[#f97316]/90 border border-[#f97316]/50 rounded-xl p-3.5 shadow-2xl flex items-start gap-2.5 backdrop-blur-md font-sans">
-          <AlertTriangle className="w-5 h-5 text-[#f97316] shrink-0 mt-0.5" />
+        <div className="absolute top-18 left-4 right-4 z-40 max-w-md bg-[#0a3d5c]/90 border border-[#0a3d5c]/50 rounded-xl p-3.5 shadow-2xl flex items-start gap-2.5 backdrop-blur-md font-sans">
+          <AlertTriangle className="w-5 h-5 text-[#0a3d5c] shrink-0 mt-0.5" />
           <div className="flex-1">
-            <div className="text-xs font-bold text-[#f97316]">Google Maps Integration Alert</div>
-            <div className="text-[11px] text-[#f97316] mt-1 leading-relaxed">
+            <div className="text-xs font-bold text-[#0a3d5c]">Google Maps Integration Alert</div>
+            <div className="text-[11px] text-[#0a3d5c] mt-1 leading-relaxed">
               {apiError}
               <span className="block mt-1 font-bold text-[#00aaff]">
                 💡 Tip: You can still select points and estimate distances perfectly by clicking directly anywhere on the hybrid satellite map!
@@ -565,7 +565,7 @@ function GoogleMapContainer({
             <button 
               type="button" 
               onClick={() => setApiError(null)}
-              className="mt-2 text-[10px] text-[#f97316] hover:text-[#f97316] underline font-semibold cursor-pointer"
+              className="mt-2 text-[10px] text-[#0a3d5c] hover:text-[#0a3d5c] underline font-semibold cursor-pointer"
             >
               Dismiss warning
             </button>
@@ -638,7 +638,7 @@ const MOCK_YARDS = [
     lat: 37.7749,
     lng: -122.4194,
     scale: 0.12, // meters per pixel
-    bgColor: "bg-[#0a1628]",
+    bgColor: "bg-[#f8fafc]",
     layout: (
       <svg className="w-full h-full opacity-70" viewBox="0 0 500 500">
         <defs>
@@ -670,7 +670,7 @@ const MOCK_YARDS = [
         <circle cx="434" cy="74" r="20" fill="#2d5a27" />
         <circle cx="60" cy="350" r="22" fill="#228b22" />
         {/* Property fencing boundary guide outline */}
-        <rect x="25" y="30" width="450" height="375" fill="none" stroke="#f97316" strokeWidth="1.5" strokeDasharray="6,6" opacity="0.4" />
+        <rect x="25" y="30" width="450" height="375" fill="none" stroke="#0a3d5c" strokeWidth="1.5" strokeDasharray="6,6" opacity="0.4" />
       </svg>
     )
   },
@@ -680,7 +680,7 @@ const MOCK_YARDS = [
     lat: 30.2672,
     lng: -97.7431,
     scale: 0.16,
-    bgColor: "bg-[#0a1628]",
+    bgColor: "bg-[#f8fafc]",
     layout: (
       <svg className="w-full h-full opacity-70" viewBox="0 0 500 500">
         <rect width="100%" height="100%" fill="#1a2e26" />
@@ -699,7 +699,7 @@ const MOCK_YARDS = [
         <circle cx="280" cy="320" r="25" fill="#143d23" />
         <circle cx="330" cy="140" r="30" fill="#0f4523" />
         {/* Boundary outline */}
-        <rect x="30" y="20" width="350" height="360" fill="none" stroke="#f97316" strokeWidth="1.5" strokeDasharray="6,6" opacity="0.4" />
+        <rect x="30" y="20" width="350" height="360" fill="none" stroke="#0a3d5c" strokeWidth="1.5" strokeDasharray="6,6" opacity="0.4" />
       </svg>
     )
   }
@@ -819,7 +819,7 @@ function generateCustomYard(address: string, indexOffset: number = 0) {
       ))}
 
       {/* Lot Property boundaries indicator box */}
-      <rect x="20" y="20" width="460" height="350" fill="none" stroke="#f97316" strokeWidth="2" strokeDasharray="8 6" opacity="0.5" />
+      <rect x="20" y="20" width="460" height="350" fill="none" stroke="#0a3d5c" strokeWidth="2" strokeDasharray="8 6" opacity="0.5" />
     </svg>
   );
 
@@ -829,7 +829,7 @@ function generateCustomYard(address: string, indexOffset: number = 0) {
     lat: 34.0522 + (hash % 100) * 0.001,
     lng: -118.2437 + (hash % 100) * 0.001,
     scale: scale,
-    bgColor: "bg-[#0a1628]",
+    bgColor: "bg-[#f8fafc]",
     layout: layout
   };
 }
@@ -941,9 +941,9 @@ function MockMapContainer({
     <div className="absolute inset-0 flex flex-col select-none">
       
       {/* Top Search simulation combo form */}
-      <div className="absolute top-4 left-4 right-4 z-40 max-w-md bg-[#0d1b2e] border border-[#0a1628]/30 rounded-xl shadow-2xl">
+      <div className="absolute top-4 left-4 right-4 z-40 max-w-md bg-white border border-[#e2e8f0] rounded-xl shadow-2xl">
         <form onSubmit={handleMockSearchSubmit} className="flex items-center px-3.5 py-1.5 justify-between">
-          <Search className="w-4 h-4 text-white/50 mr-2.5 shrink-0" />
+          <Search className="w-4 h-4 text-[#9ca3af] mr-2.5 shrink-0" />
           <input
             type="text"
             value={searchQuery}
@@ -952,18 +952,18 @@ function MockMapContainer({
               setShowDropdown(true);
             }}
             placeholder="Search address (e.g., Beverly Hills, CA)..."
-            className="w-full bg-transparent text-sm text-white outline-none placeholder-white/40 py-1"
+            className="w-full bg-transparent text-sm text-[#1a2332] outline-none placeholder-[#9ca3af] py-1"
           />
           <button 
             type="submit"
-            className="text-[10px] bg-[#f97316] hover:bg-[#f97316] text-white font-extrabold px-3.5 py-1.5 rounded-lg uppercase tracking-wider transition cursor-pointer"
+            className="text-[10px] bg-[#0a3d5c] hover:bg-[#0a3d5c] text-white font-extrabold px-3.5 py-1.5 rounded-lg uppercase tracking-wider transition cursor-pointer"
           >
             Locate
           </button>
         </form>
 
         {showDropdown && (
-          <div className="absolute top-full left-0 right-0 mt-1 bg-[#0f2035] border border-[#0a1628]/30 rounded-lg shadow-2xl overflow-hidden divide-y divide-[#0a1628]/20 z-50">
+          <div className="absolute top-full left-0 right-0 mt-1 bg-white border border-[#e2e8f0] rounded-lg shadow-2xl overflow-hidden divide-y divide-[#e2e8f0] z-50">
             {MOCK_YARDS.map((yard, index) => (
               <button
                 key={index}
@@ -974,9 +974,9 @@ function MockMapContainer({
                   setShowDropdown(false);
                   setPins([]);
                 }}
-                className="w-full text-left px-4 py-2 hover:bg-[#0f2035] text-xs text-white/70 hover:text-white transition block"
+                className="w-full text-left px-4 py-2 hover:bg-white text-xs text-[#6b7280] hover:text-[#0a3d5c] transition block"
               >
-                <div className="font-bold text-[#f97316]">{yard.name}</div>
+                <div className="font-bold text-[#0a3d5c]">{yard.name}</div>
                 <div className="opacity-70 font-mono text-[9px] mt-0.5">{yard.address}</div>
               </button>
             ))}
@@ -986,7 +986,7 @@ function MockMapContainer({
 
       {/* Selector pills for quick navigation */}
       <div className="absolute bottom-4 left-4 z-30 flex items-center gap-2">
-        <div className="bg-[#0d1b2e]/95 border border-[#0a1628]/30 p-1 rounded-xl flex items-center shadow-lg">
+        <div className="bg-white/95 border border-[#e2e8f0] p-1 rounded-xl flex items-center shadow-lg">
           {MOCK_YARDS.map((y, idx) => (
             <button
               key={idx}
@@ -996,8 +996,8 @@ function MockMapContainer({
               }}
               className={`px-3 py-1.5 rounded-lg text-[10px] font-extrabold uppercase tracking-wider transition cursor-pointer ${
                 mockYardIndex === idx 
-                  ? 'bg-[#f97316] text-white' 
-                  : 'text-white/70 hover:bg-[#0f2035]'
+                  ? 'bg-[#0a3d5c] text-white' 
+                  : 'text-[#6b7280] hover:bg-white'
               }`}
             >
               Yard #{idx + 1}
@@ -1007,7 +1007,7 @@ function MockMapContainer({
       </div>
 
       {/* Coordinates Scale Info banner */}
-      <div className="absolute top-18 right-4 z-30 bg-[#0d1b2e]/95 border border-[#0a1628]/30 px-3 py-2 rounded-xl text-[10px] text-white/70 font-mono shadow-md flex items-center gap-2">
+      <div className="absolute top-18 right-4 z-30 bg-white/95 border border-[#e2e8f0] px-3 py-2 rounded-xl text-[10px] text-[#6b7280] font-mono shadow-md flex items-center gap-2">
         <span className="w-2 h-2 rounded-full bg-[#00aaff] animate-pulse" />
         <span>GPS Scale: 1px = {currentYard.scale}m</span>
       </div>
@@ -1016,7 +1016,7 @@ function MockMapContainer({
       <div 
         ref={containerRef}
         onClick={handleCanvasClick}
-        className="flex-1 w-full h-full relative overflow-hidden bg-[#0a1628] flex items-center justify-center cursor-crosshair bg-[#0a1628]"
+        className="flex-1 w-full h-full relative overflow-hidden bg-[#f8fafc] flex items-center justify-center cursor-crosshair bg-[#f8fafc]"
       >
         <div className="absolute inset-0 w-full h-full transition-all duration-300" style={{ transform: `scale(${mockMapZoom})` }}>
           {currentYard.layout}
@@ -1026,14 +1026,14 @@ function MockMapContainer({
         {isSearching && (
           <div className="absolute inset-0 bg-black/80 backdrop-blur-sm z-30 flex flex-col items-center justify-center space-y-4">
             <div className="relative">
-              <div className="w-16 h-16 rounded-full border-4 border-[#f97316]/20 border-t-[#f97316] animate-spin" />
-              <Search className="w-6 h-6 text-[#f97316] absolute inset-0 m-auto animate-pulse" />
+              <div className="w-16 h-16 rounded-full border-4 border-[#e2e8f0] border-t-[#0a3d5c] animate-spin" />
+              <Search className="w-6 h-6 text-[#0a3d5c] absolute inset-0 m-auto animate-pulse" />
             </div>
             <div className="text-center">
-              <div className="text-xs text-white font-extrabold uppercase tracking-widest font-mono animate-pulse">
+              <div className="text-xs text-[#0a3d5c] font-extrabold uppercase tracking-widest font-mono animate-pulse">
                 {searchStepText}
               </div>
-              <div className="text-[10px] text-white/50 font-mono mt-1">
+              <div className="text-[10px] text-[#9ca3af] font-mono mt-1">
                 Simulating Space Link Authorization...
               </div>
             </div>
@@ -1067,7 +1067,7 @@ function MockMapContainer({
                   height="26"
                   className="overflow-visible"
                 >
-                  <div className="bg-[#0f2035]/95 border border-[#0a1628]/30 rounded px-1.5 py-0.5 text-center text-[10px] font-bold text-white font-mono shadow-2xl">
+                  <div className="bg-white/95 border border-[#e2e8f0] rounded px-1.5 py-0.5 text-center text-[10px] font-bold text-[#1a2332] font-mono shadow-2xl">
                     {seg.length.toFixed(2)} m
                   </div>
                 </foreignObject>
@@ -1086,7 +1086,7 @@ function MockMapContainer({
               className="absolute pointer-events-none transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center z-20"
               style={{ left: `${pt.x}px`, top: `${pt.y}px` }}
             >
-              <div className="w-5.5 h-5.5 rounded-full bg-white border-[3px] border-[#0a1628]/30 shadow-[0_2px_8px_rgba(0,0,0,0.7)] flex items-center justify-center text-[10px] font-black text-black">
+              <div className="w-5.5 h-5.5 rounded-full bg-white border-[3px] border-[#e2e8f0] shadow-[0_2px_8px_rgba(0,0,0,0.7)] flex items-center justify-center text-[10px] font-black text-black">
                 {idx + 1}
               </div>
             </div>
@@ -1095,14 +1095,14 @@ function MockMapContainer({
 
         {/* Floating help notification info banner */}
         {pins.length === 0 && !isSearching && (
-          <div className="absolute inset-x-0 mx-auto w-fit bottom-16 bg-[#0d1b2e]/90 border border-[#0a1628]/40 px-4 py-2.5 rounded-xl flex items-center gap-2 shadow-2xl z-30 text-xs text-white max-w-sm font-sans animate-bounce">
+          <div className="absolute inset-x-0 mx-auto w-fit bottom-16 bg-white/90 border border-[#e2e8f0] px-4 py-2.5 rounded-xl flex items-center gap-2 shadow-2xl z-30 text-xs text-[#1a2332] max-w-sm font-sans animate-bounce">
             <Info className="w-4 h-4 text-[#00aaff]" />
             <span>Tap multiple times on map to form a custom fence boundary outline.</span>
           </div>
         )}
 
         {pins.length === 1 && !isSearching && (
-          <div className="absolute inset-x-0 mx-auto w-fit bottom-16 bg-[#0d1b2e]/95 border border-[#0a1628]/40 px-4 py-2.5 rounded-xl flex items-center gap-2 shadow-2xl z-30 text-xs text-white max-w-sm font-sans">
+          <div className="absolute inset-x-0 mx-auto w-fit bottom-16 bg-white/95 border border-[#e2e8f0] px-4 py-2.5 rounded-xl flex items-center gap-2 shadow-2xl z-30 text-xs text-[#1a2332] max-w-sm font-sans">
             <Check className="w-4 h-4 text-[#00aaff] animate-pulse" />
             <span>Tap another spot to measure the first fence line segment!</span>
           </div>
